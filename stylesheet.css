@@ -1,0 +1,45 @@
+@import url(http://fonts.googleapis.com/css?family=Philosopher|Cantana+One);
+
+html,
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+  	background-color: #eee;
+  	font-family: "Cantana+One", Arial, sans-serif;
+}
+
+body.h1 {
+  	font-family: "Cantana+One", Arial, sans-serif;
+  	font-size:50px;
+}
+
+#container {
+	min-height:100%;
+	position:relative;
+	padding-top:10px;
+}
+
+#header {
+	padding-left:10px;
+	padding-right:40px;
+	float:left;
+	position:relative;
+}
+
+#content {
+	float:left;
+	position:relative;
+	padding:10px;
+	overflow:hidden;
+}
+
+#footer{
+	font-size: 10px;
+	position:absolute;
+	padding:10px;
+	bottom:0;
+	height:20px;
+	width:100%;
+	background:#ddd;
+}
