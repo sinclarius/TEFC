@@ -15,6 +15,7 @@
         <div data-role="header">
             <h1>Transport</h1>
         </div><!-- /header -->
+
         <div data-role="subheader">
             <h1><center>Airplane</center></h1>
         </div><!-- /header -->
@@ -53,10 +54,21 @@
         <p><center><b><font size="6"> or </font></b></center></p><br />
             <label for="basic">Distance Traveled:</label>
             <input type="number" name="name" id="basic" value=""  /><br />
+
+            <fieldset data-role="controlgroup" data-type="horizontal">
+            <legend>Class:</legend>
+            <input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" checked="checked" />
+            <label for="radio-choice-1">Economy</label>
+
+            <input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2"  />
+            <label for="radio-choice-2">First / Business</label>
+            </fieldset><br />
+
             <input type="submit" value="Submit" /><br /><br />
             
             <center><progress value="10" max="100">
             </progress></center>
+
             <a href="all.html" data-role="button">Back to Main</a>
         </div><!-- /content -->
  
