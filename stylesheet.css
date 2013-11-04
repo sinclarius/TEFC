@@ -23,13 +23,10 @@ body.h1 {
 #header {
 	padding-left:10px;
 	padding-right:40px;
-	float:left;
-	position:relative;
+	width:150px;
 }
 
 #content {
-	float:left;
-	position:relative;
 	padding:10px;
 	overflow:hidden;
 }
