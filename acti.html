@@ -10,24 +10,26 @@
     <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 </head>
 <body>
-    <div data-role="page">
- 
+
+<form name="TESTING">
         <div data-role="header">
             <h1>Activities</h1>
         </div><!-- /header -->
- 
-        <div id="content" data-role="content">
-            <label for="basic">Attractions:</label>
-            <input type="number" name="attrac" id="basic" value="0"  /><br />
+<label for="basic">Attractions:</label>
+<input type="number" name="INPUT1" id="input1" value="0" onchange="calculate();"/>
 
-            <label for="basic">Entertainment:</label>
-            <input type="number" name="entert" id="basic" value="0"  /><br />
+<label for="basic">Entertainment:</label>
+<input type="number" name="INPUT2" id="input2" value="0" onchange="calculate();"/>
 
-            <label for="basic">Activities:</label>
-            <input type="number" name="activi" id="basic" value="0"  /><br />
-            <a href="all.html" data-role="button">Back to Main</a>
+<label for="basic">Activities:</label>
+<input type="number" name="INPUT3" id="input3" value="0" onchange="calculate();"/>
+
+<label for="basic">Total Hectares:</label>
+<input type="number" name="OUTPUT1" id="output">
+
+        <a href="all.html" data-role="button" data-theme="b">Back to Main</a>
         </div><!-- /content -->
- 
+
         <div id="footer" data-role="footer">
             <h4>
                 <!--[if lte IE 8]><span style="filter: FlipH; -ms-filter: "FlipH"; display: inline-block;"><![endif]-->
@@ -36,5 +38,26 @@
         </div><!-- /footer -->
  
     </div><!-- /page -->
+
+
+</form>
+
+<script type="text/javascript">
+function calculate() {
+
+var USERINPUT1 = document.TESTING.INPUT1.value;
+var USERINPUT2 = document.TESTING.INPUT2.value;
+var USERINPUT3 = document.TESTING.INPUT3.value;
+var carbseq = (10000/71000)
+var CALC1 = (USERINPUT1*6.2);
+var CALC2 = (USERINPUT2*9.4);
+var CALC3 = (USERINPUT3*95.6);
+var CALC4 = ((CALC1+CALC2+CALC3)*carbseq)/10000;
+
+document.TESTING.OUTPUT1.value = CALC4;
+
+}
+
+</script>
 </body>
 </html>
