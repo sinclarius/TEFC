@@ -15,18 +15,19 @@
         <div data-role="header">
             <h1>Activities</h1>
         </div><!-- /header -->
+        <br />
 <label for="basic">Attractions:</label>
 <input type="number" name="INPUT1" id="input1" value="0" onchange="calculate();"/>
-
+        <br />
 <label for="basic">Entertainment:</label>
 <input type="number" name="INPUT2" id="input2" value="0" onchange="calculate();"/>
-
+        <br />
 <label for="basic">Activities:</label>
 <input type="number" name="INPUT3" id="input3" value="0" onchange="calculate();"/>
-
+        <br />
 <label for="basic">Total Hectares:</label>
 <input type="number" name="OUTPUT1" id="output">
-
+        <br />
         <a href="all.html" data-role="button" data-theme="b">Back to Main</a>
         </div><!-- /content -->
 
@@ -49,12 +50,12 @@ var USERINPUT1 = document.TESTING.INPUT1.value;
 var USERINPUT2 = document.TESTING.INPUT2.value;
 var USERINPUT3 = document.TESTING.INPUT3.value;
 var carbseq = (10000/71000)
-var CALC1 = (USERINPUT1*6.2);
-var CALC2 = (USERINPUT2*9.4);
-var CALC3 = (USERINPUT3*95.6);
-var CALC4 = ((CALC1+CALC2+CALC3)*carbseq)/10000;
+var attrac = (USERINPUT1*6.2);
+var entert = (USERINPUT2*9.4);
+var activi = (USERINPUT3*95.6);
+var acti = ((attrac+entert+activi)*carbseq)/10000;
 
-document.TESTING.OUTPUT1.value = CALC4;
+document.TESTING.OUTPUT1.value = acti;
 
 }
 
