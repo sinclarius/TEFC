@@ -10,17 +10,27 @@
     <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 </head>
 <body>
-    <div data-role="page">
- 
-        <div id="header" data-role="header">
-            <h1>Goods</h1>
+
+<form name="TESTING">
+        <div data-role="header">
+            <h1>Goods and Fiber</h1>
         </div><!-- /header -->
- 
-        <div id="content" data-role="content">
-            <p>Hello world</p>
-            <a href="all.html" data-role="button">Back to Main</a>
+        <br />
+<label for="basic">Clothing:</label>
+<input type="number" name="INPUT1" id="input1" value="0" onchange="calculate();"/>
+        <br />
+<label for="basic">Books and Magazines:</label>
+<input type="number" name="INPUT2" id="input2" value="0" onchange="calculate();"/>
+        <br />
+<label for="basic">Tobacco and Alcohol:</label>
+<input type="number" name="INPUT3" id="input3" value="0" onchange="calculate();"/>
+        <br />
+<label for="basic">Total Hectares:</label>
+<input type="number" name="OUTPUT1" id="output" readonly >
+        <br />
+        <a href="all.html" data-role="button" data-theme="b">Back to Main</a>
         </div><!-- /content -->
- 
+
         <div id="footer" data-role="footer">
             <h4>
                 <!--[if lte IE 8]><span style="filter: FlipH; -ms-filter: "FlipH"; display: inline-block;"><![endif]-->
@@ -29,5 +39,26 @@
         </div><!-- /footer -->
  
     </div><!-- /page -->
+
+
+</form>
+
+<script type="text/javascript">
+function calculate() {
+
+var USERINPUT1 = document.TESTING.INPUT1.value;
+var USERINPUT2 = document.TESTING.INPUT2.value;
+var USERINPUT3 = document.TESTING.INPUT3.value;
+var carbseq = (10000/71000)
+var clothi = ((USERINPUT1*0.0003)/2.23);
+var bookma = ((USERINPUT2*0.00016)/0.21);
+var tobalc = ((USERINPUT3*0.00016)/1.14);
+var good = ((clothi+bookma+tobalc)*carbseq)/10000;
+
+document.TESTING.OUTPUT1.value = good;
+
+}
+
+</script>
 </body>
 </html>
