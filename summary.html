@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <title>TEFC</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" media="screen and (min-device-width: 800px)" href="stylesheet.css" >
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css">
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+</head>
+<body>
+
+<form name="TESTING">
+        <div data-role="header">
+            <h1>Summary</h1>
+        </div><!-- /header -->
+        <br />
+<label for="basic">Transport:</label>
+<input type="number" name="INPUT1" id="input1" value="0" readonly />
+        <br />
+<label for="basic">Activities:</label>
+<input type="number" name="INPUT2" id="input2" value="0" readonly />
+        <br />
+<label for="basic">Goods:</label>
+<input type="number" name="INPUT3" id="input3" value="0" readonly />
+        <br />
+<label for="basic">Total Hectares:</label>
+<input type="number" name="OUTPUT1" id="output" readonly >
+        <br />
+        <a href="all.html" data-role="button" data-theme="b">Back to Main</a>
+        </div><!-- /content -->
+
+        <div id="footer" data-role="footer">
+            <h4>
+                <!--[if lte IE 8]><span style="filter: FlipH; -ms-filter: "FlipH"; display: inline-block;"><![endif]-->
+                <span style="-moz-transform: scaleX(-1); -o-transform: scaleX(-1); -webkit-transform: scaleX(-1); transform: scaleX(-1); display: inline-block;">© </span>2013 TEFCo. </h4>
+                <!--[if lte IE 8]></span><![endif]-->
+        </div><!-- /footer -->
+ 
+    </div><!-- /page -->
+
+
+</form>
+
+<script type="text/javascript">
+<!--
+function sendme() {
+myString=document.acti.TESTING.OUTPUT1.value
+location.href="acti.html"
+
+
+}
+
+</script>
+</body>
+</html>
