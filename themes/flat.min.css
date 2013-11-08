@@ -104,7 +104,7 @@
     background-image: -o-linear-gradient(#f6f6f6, #e0e0e0);
     background-image: linear-gradient(#f6f6f6, #e0e0e0);
 }
-.ui-btn-hover-a:visited, .ui-btn-hover-a:hover, .ui-btn-hover-a a.ui-link-inherit {
+.ui-btn-hover-:visited, .ui-btn-hover-a:hover, .ui-btn-hover-a a.ui-link-inherit {
     color:#2f3e46;
 }
 .ui-btn-down-a {
