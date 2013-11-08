@@ -14,15 +14,25 @@
  
         <div data-role="header">
             <h1>Transport</h1>
+            <div data-role="navbar">
+            <ul>
+            <li><a href="#">Plane</a></li>
+            <li><a href="#">Train</a></li>
+            <li><a href="bus.html">Bus</a></li>
+            <li><a href="#">Car</a></li>
+            <li><a href="#">Boat</a></li>
+            </ul>
+    </div><!-- /navbar -->
         </div><!-- /header -->
-
         <div data-role="subheader">
             <h1><center>Airplane</center></h1>
         </div><!-- /header -->
  
         <div data-role="content">
+        <form>
             <label for="select-choice-0" class="select">Academic Travel:</label>
             <select name="select-choice-0" id="select-choice-0">
+            <option value="" disabled="disabled" selected="selected">Please select an Academic Travel</option>
             <option value="amst">Amsterdam</option>
             <option value="austr">Australia</option>
             <option value="botkal">Botswana and the Kalahari Desert</option>
@@ -38,7 +48,7 @@
             <option value="india">India</option>
             <option value="japan">Japan</option>
             <option value="londo">London</option>
-            <option value="mal">Malawi and Mozambique</option>
+            <option value="malmoz">Malawi and Mozambique</option>
             <option value="malzam">Malawi and Zambia</option>
             <option value="moroc">Morocco</option>
             <option value="mozsasw">Mozambique, South Africa, and Swaziland</option>
@@ -51,24 +61,21 @@
             <option value="vbp">Vienna, Budapest and Prague</option>
             
             </select>
-        <p><center><b><font size="6"> or </font></b></center></p><br />
+        </form>
+            <p><center><b><font size="6"> or </font></b></center></p><br />
             <label for="basic">Distance Traveled:</label>
             <input type="number" name="name" id="basic" value="0"  /><br />
-
             <fieldset data-role="controlgroup" data-type="horizontal">
             <legend>Class:</legend>
             <input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" checked="checked" />
             <label for="radio-choice-1">Economy</label>
-
             <input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2"  />
             <label for="radio-choice-2">First / Business</label>
             </fieldset><br />
-
             <input type="submit" value="Submit" /><br /><br />
             
             <center><progress value="10" max="100">
             </progress></center>
-
             <a href="all.html" data-role="button" data-theme="b">Back to Main</a>
         </div><!-- /content -->
  
