@@ -14,83 +14,125 @@
  
         <div data-role="header">
             <h1>Transport</h1>
-            <div data-role="navbar">
-            <ul>
-            <li><a href="plane.html">Plane</a></li>
-            <li><a href="train.html">Train</a></li>
-            <li><a href="bus.html">Bus</a></li>
-            <li><a href="car.html">Car</a></li>
-            <li><a href="boat.html">Boat</a></li>
-            </ul>
-            </div><!-- /navbar -->
         </div><!-- /header -->
-        <div data-role="subheader">
-            <h1><center>Airplane</center></h1>
-        </div><!-- /header -->
- 
-        <div data-role="content">
-        <form>
-            <label for="select-choice-0" class="select">Academic Travel:</label>
-            <select name="select-choice-0" id="select-choice-0">
-            <option value="" disabled="disabled" selected="selected">Please select an Academic Travel</option>
-            <option value="amst">Amsterdam</option>
-            <option value="austr">Australia</option>
-            <option value="botkal">Botswana and the Kalahari Desert</option>
-            <option value="braz">Brazil</option>
-            <option value="berpar">Berlin and Paris</option>
-            <option value="bervie">Berlin and Vienna</option>
-            <option value="berwakr">Berlin, Warsaw, Kraców and Vienna</option>
-            <option value="folrh">Following the Rhine</option>
-            <option value="greec">Greece</option>
-            <option value="hamcop">Hamburg and Copenhagen</option>
-            <option value="icel">Iceland</option>
-            <option value="ire">Ireland</option>
-            <option value="india">India</option>
-            <option value="japan">Japan</option>
-            <option value="londo">London</option>
-            <option value="malmoz">Malawi and Mozambique</option>
-            <option value="malzam">Malawi and Zambia</option>
-            <option value="moroc">Morocco</option>
-            <option value="mozsasw">Mozambique, South Africa, and Swaziland</option>
-            <option value="namib">Namibia</option>
-            <option value="nor">Norway</option>
-            <option value="spain">Spain</option>
-            <option value="tanz">Tanzania</option>
-            <option value="turk">Turkey</option>
-            <option value="viebud">Vienna and Budapest</option>
-            <option value="vbp">Vienna, Budapest and Prague</option>
-            
-            </select>
-        </form>
-<<<<<<< HEAD
-            <p><center><b><font size="6"> or </font></b></center></p><br />
-=======
 
-            <p><center><b><font size="6"> or </font></b></center></p><br />
+                <div data-role="collapsible">
+                    <h1><center>Airplane</center></h1>
+     
+                    <div data-role="content">
+                    <form>
+                        <label for="select-choice-0" class="select">Academic Travel:</label>
+                        <select name="select-choice-0" id="select-choice-0">
+                        <option value="" disabled="disabled" selected="selected">Please select an Academic Travel</option>
+                        <option value="amst">Amsterdam</option>
+                        <option value="austr">Australia</option>
+                        <option value="botkal">Botswana and the Kalahari Desert</option>
+                        <option value="braz">Brazil</option>
+                        <option value="berpar">Berlin and Paris</option>
+                        <option value="bervie">Berlin and Vienna</option>
+                        <option value="berwakr">Berlin, Warsaw, Kraców and Vienna</option>
+                        <option value="folrh">Following the Rhine</option>
+                        <option value="greec">Greece</option>
+                        <option value="hamcop">Hamburg and Copenhagen</option>
+                        <option value="icel">Iceland</option>
+                        <option value="ire">Ireland</option>
+                        <option value="india">India</option>
+                        <option value="japan">Japan</option>
+                        <option value="londo">London</option>
+                        <option value="malmoz">Malawi and Mozambique</option>
+                        <option value="malzam">Malawi and Zambia</option>
+                        <option value="moroc">Morocco</option>
+                        <option value="mozsasw">Mozambique, South Africa, and Swaziland</option>
+                        <option value="namib">Namibia</option>
+                        <option value="nor">Norway</option>
+                        <option value="spain">Spain</option>
+                        <option value="tanz">Tanzania</option>
+                        <option value="turk">Turkey</option>
+                        <option value="viebud">Vienna and Budapest</option>
+                        <option value="vbp">Vienna, Budapest and Prague</option>
+                    
+                        </select>
+                    </form>
 
->>>>>>> 03127869ea39ad03869928a9a9a04e240603be5a
-            <label for="basic">Distance Traveled:</label>
-            <input type="number" name="name" id="basic" value="0"  /><br />
-            <fieldset data-role="controlgroup" data-type="horizontal">
-            <legend>Class:</legend>
-            <input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" checked="checked" />
-            <label for="radio-choice-1">Economy</label>
-            <input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2"  />
-            <label for="radio-choice-2">First / Business</label>
-            </fieldset><br />
-            <input type="submit" value="Submit" /><br /><br />
-            
-            <center><progress value="10" max="100">
-            </progress></center>
+                    <p><center><b><font size="6"> or </font></b></center></p><br />
+
+                    <label for="basic">Distance Traveled:</label>
+                    <input type="number" name="name" id="basic" value="0"  /><br />
+
+                    <fieldset data-role="controlgroup" data-type="horizontal">
+                    <legend>Class:</legend>
+                    <input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" checked="checked" />
+                    <label for="radio-choice-1">Economy</label>
+
+                    <input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2"  />
+                    <label for="radio-choice-2">First / Business</label>
+                    </fieldset><br />
+                
+                    </div><!--datarole--> 
+                </div><!--collapsable--> 
+
+                <div data-role="collapsible">
+                    <h1><center>Train</center></h1>
+
+                    <h3>Local</h3>
+                    <label for="basic">Distance Traveled:</label>
+                    <input type="number" name="name" id="basic" value=""  /><br />
+                
+                    <h3>Intercity</h3>
+                    <label for="basic">Distance Traveled:</label>
+                    <input type="number" name="name" id="basic" value=""  /><br />
+
+                    <input type="submit" value="Submit" /><br /><br />
+                
+                </div><!--collapsable-->
+
+                <div data-role="collapsible">
+                    <h1><center>Bus</center></h1>
+
+                    <h3>Local</h3>
+                    <label for="basic">Distance Traveled:</label>
+                    <input type="number" name="name" id="basic" value=""  /><br />
+                
+                    <h3>Intercity</h3>
+                    <label for="basic">Distance Traveled:</label>
+                    <input type="number" name="name" id="basic" value=""  /><br />
+                </div><!--collapsable-->
+
+                <div data-role="collapsible">
+                    <h1><center>Car</center></h1>
+
+                    <h3>Private</h3>
+                    <label for="basic">Distance Traveled:</label>
+                    <input type="number" name="name" id="basic" value=""  /><br />
+                    
+                    <h3>Taxi / Rental</h3>
+                    <label for="basic">Distance Traveled:</label>
+                    <input type="number" name="name" id="basic" value=""  /><br />
+                </div>
+
+                <div data-role="collapsible">
+                    <h1><center>Boat</center></h1>
+
+                    <label for="basic">Distance Traveled:</label>
+                    <input type="number" name="name" id="basic" value=""  /><br />
+                </div>
+
+            <center>
+            <div data-type="horizontal" data-role="controlgroup">
+            <a href="all.html" data-role="button" data-theme="b" data-inline="true">Back</a>
+            <a href="tutorial.html" data-role="button" data-theme="c" data-inline="true">Help</a>
+            <a href="acco.html" data-role="button" data-theme="b" data-inline="true">Next</a>
+            </center>
+
             <a href="all.html" data-role="button" data-theme="b">Back to Main</a>
-        </div><!-- /content -->
+            </div><!-- /content -->
  
-        <div data-role="footer">
+    <div data-role="footer">
             <h4>
                 <!--[if lte IE 8]><span style="filter: FlipH; -ms-filter: "FlipH"; display: inline-block;"><![endif]-->
                 <span style="-moz-transform: scaleX(-1); -o-transform: scaleX(-1); -webkit-transform: scaleX(-1); transform: scaleX(-1); display: inline-block;">© </span>2013 TEFCo. </h4>
                 <!--[if lte IE 8]></span><![endif]-->
-        </div><!-- /footer -->
+    </div><!-- /footer -->
  
     </div><!-- /page -->
 </body>
