@@ -4,10 +4,10 @@
     <title>TEFC</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" media="screen and (min-device-width: 800px)" href="stylesheet.css" >
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css">
-    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    <link rel="stylesheet" href="themes/flat.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0-rc.1/jquery.mobile-1.4.0-rc.1.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.0-rc.1/jquery.mobile-1.4.0-rc.1.min.js"></script>
 </head>
 <body>
     <div data-role="page">
@@ -17,10 +17,16 @@
         </div><!-- /header -->
  
         <div id="content" data-role="content">
-            <p>Hello world</p>
+            
+            <form>
+                <label for="slider-3">Servings of Meat per Day:</label>
+                <input type="range" name="slider" id="slider" min="0" max="7" value="0" data-show-value="true" data-popup-enabled="true">
+
+            <br />
             <center><a href="good.html" data-role="button" data-theme="b" data-inline="true">Back</a>
             <a href="tutorial.html" data-role="button" data-theme="c" data-inline="true" data-transition="flip">Help</a>
             <a href="all.html" data-role="button" data-theme="b" data-inline="true">Next</a></center>
+            <br />
             <a href="all.html" data-role="button">Back to Main</a>
         </div><!-- /content -->
  
