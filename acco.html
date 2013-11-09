@@ -10,70 +10,105 @@
     <script src="http://code.jquery.com/mobile/1.4.0-rc.1/jquery.mobile-1.4.0-rc.1.min.js"></script>
 </head>
 <body>
-    <div data-role="page">
+<div data-role="page">
+
+        <script type="text/javascript">
+        function calculate() {
+
+        var USERINPUT1 = document.TESTING.INPUT1.value;
+        var USERINPUT2 = document.TESTING.INPUT2.value;
+        var USERINPUT3 = document.TESTING.INPUT3.value;
+        var USERINPUT4 = document.TESTING.INPUT4.value;
+        var USERINPUT5 = document.TESTING.INPUT5.value;
+        var USERINPUT6 = document.TESTING.INPUT6.value;
+        var USERINPUT7 = document.TESTING.INPUT7.value;
+        var USERINPUT8 = document.TESTING.INPUT8.value;
+        var carbseq = (10000/71000)
+        var simgue = (USERINPUT1*30);
+        var luxgue = (USERINPUT2*40);
+        var onetwo = (USERINPUT3*40);
+        var thrfou = (USERINPUT4*70);
+        var fivest = (USERINPUT5*110);
+        var selfca = (USERINPUT6*50);
+        var privat = (USERINPUT7*30);
+        var boatss = (USERINPUT8*40);
+        var acco = ((simgue+luxgue+onetwo+thrfou+fivest+selfca+privat+boatss)*carbseq)/10000;
+
+        document.TESTING.OUTPUT1.value = acco;
+
+        }
+
+        </script>
  
-        <div data-role="header">
-        <h1>Accomodation</h1>
-        </div><!-- /header -->
- 
-        <div id="content" data-role="content">
-                <div>
-                <center>
-                <table data-role="table" id="table-column-toggle" class="ui-responsive table-stroke">
-                    <thead>
-                        <tr>
-                            <th><u>Type</u></th>
-                            <th><u>Nights</u></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                    <th>Simple Guesthouse</th>
-                    <td><input type="number" name="name" id="basic" value="0"  /></td>
-                    </tr>
-                    <tr>
-                    <th>Luxurious Guesthouse</th>
-                    <td><input type="number" name="name" id="basic" value="0"  /></td>
-                    </tr>
-                    <tr>
-                    <th>1 - 2 Star</th>
-                    <td><input type="number" name="name" id="basic" value="0"  /></td>
-                    </tr>
-                    <tr>
-                    <th>3 - 4 Star</th>
-                    <td><input type="number" name="name" id="basic" value="0"  /></td>
-                    </tr>
-                    <tr>
-                    <th>5 Star</th>
-                    <td><input type="number" name="name" id="basic" value="0"  /></td>
-                    </tr>
-                    <tr>
-                    <th>Self Catering</th>
-                    <td><input type="number" name="name" id="basic" value="0"  /></td>
-                    </tr>
-                    <tr>
-                    <th>Private</th>
-                    <td><input type="number" name="name" id="basic" value="0"  /></td>
-                    </tr>
-                    <tr>
-                    <th>Boat</th>
-                    <td><input type="number" name="name" id="basic" value="0"  /></td>
-                    </tr>
-                </center>
-                </div>
-                </tbody>
-                </table>
+            <div data-role="header">
+            <h1>Accomodation</h1>
+            </div><!-- /header -->
+     
+            <div id="content" data-role="content">
+                    <form name="TESTING">
+                    <center>
+                    <table data-role="table" id="table-column-toggle" class="ui-responsive table-stroke">
+                        <thead>
+                            <tr>
+                                <th><u>Type</u></th>
+                                <th><u>Nights</u></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Simple Guesthouse</th>
+                                <td><input type="number" name="INPUT1" id="input1" value="0" onchange="calculate();"/></td>
+                            </tr>
+                            <tr>
+                                <th>Luxurious Guesthouse</th>
+                                <td><input type="number" name="INPUT2" id="input2" value="0" onchange="calculate();"/></td>
+                            </tr>
+                            <tr>
+                                <th>1 - 2 Star</th>
+                                <td><input type="number" name="INPUT3" id="input3" value="0" onchange="calculate();"/></td>
+                            </tr>
+                            <tr>
+                                <th>3 - 4 Star</th>
+                                <td><input type="number" name="INPUT4" id="input4" value="0" onchange="calculate();"/></td>
+                            </tr>
+                            <tr>
+                                <th>5 Star</th>
+                                <td><input type="number" name="INPUT5" id="input5" value="0" onchange="calculate();"/></td>
+                            </tr>
+                            <tr>
+                                <th>Self Catering</th>
+                                <td><input type="number" name="INPUT6" id="input6" value="0" onchange="calculate();"/></td>
+                            </tr>
+                            <tr>
+                                <th>Private</th>
+                                <td><input type="number" name="INPUT7" id="input7" value="0" onchange="calculate();"/></td>
+                            </tr>
+                            <tr>
+                                <th>Boat</th>
+                                <td><input type="number" name="INPUT8" id="input8" value="0" onchange="calculate();"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </center>
+                    <label for="basic">Total Hectares:</label>
+                    <input type="number" name="OUTPUT1" id="output" readonly >
+                    </form>
+
+            
+
             <div>
             <center>
             <div data-type="horizontal" data-role="controlgroup">
-            <a href="all.html" data-role="button" data-theme="b" data-inline="true">Back</a>
+            <a href="tran.html" data-role="button" data-theme="b" data-inline="true">Back</a>
             <a href="tutorial.html" data-role="button" data-theme="c" data-inline="true" data-transition="flip">Help</a>
-            <a href="acco.html" data-role="button" data-theme="b" data-inline="true">Next</a>
+            <a href="acti.html" data-role="button" data-theme="b" data-inline="true">Next</a>
             </center>
+            </div>
 
-            <a href="all.html" data-role="button" data-theme="b" data-mini="true">Back to Main</a>
+            <a href="index.html" data-role="button" data-theme="b" data-mini="true">Back to Index</a>
             </div><!-- /content -->
-
-    </div><!-- /page -->
+ 
+      
+</div><!-- /page -->
 </body>
 </html>
