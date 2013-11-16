@@ -13,23 +13,40 @@
     <div data-role="page">
 
         <script type="text/javascript">
-        function calculate() {
+        function calculate() 
+        {
 
         var USERINPUT1 = document.train.trainin1.value;
         var USERINPUT2 = document.train.trainin2.value;
         var USERINPUT3 = document.bus.busin1.value;
         var USERINPUT4 = document.bus.busin2.value;
+        var USERINPUT5 = document.boat.boatin1.value;
+
         var carbseq = (10000/71000)
+        
         var trainlocal = (USERINPUT1 * 3.09)
         var traininter = (USERINPUT2 * 2.46)
         var buslocal = (USERINPUT3 * 3.77)
         var businter = (USERINPUT4 * 0.92)
-        var tran = ((trainlocal + traininter + buslocal + businter) * carbseq)/10000;
+        var boat = (USERINPUT5 * 0.125)
+
+        var tran = ((trainlocal + traininter + buslocal + businter + boat) * carbseq)/10000;
 
         document.results.OUTPUT1.value = tran;
 
         }
 
+        </script>
+
+        <script>
+        function displayVals() {
+          var singleValues = $( "#academictravel" ).val();
+          $( "p" ).html( "<b>Single:</b> " + singleValues +
+            " <b>Multiple:</b> " + multipleValues.join( ", " ) );
+        }
+         
+        $( "select" ).change( displayVals );
+        displayVals();
         </script>
  
         <div data-role="header">
@@ -41,9 +58,9 @@
                     <h1><center>Airplane</center></h1>
      
                     <div data-role="content">
-                    <form>
+                    <form name="plane">
                         <label for="select-choice-0" class="select">Academic Travel:</label>
-                        <select name="select-choice-0" id="select-choice-0">
+                        <select name="select-choice-0" id="academictravel">
                         <option value="" disabled="disabled" selected="selected">Select an Academic Travel</option>
                         <option value="amst">Amsterdam</option>
                         <option value="austr">Australia</option>
@@ -65,7 +82,7 @@
                         <option value="moroc">Morocco</option>
                         <option value="mozsasw">Mozambique, South Africa, and Swaziland</option>
                         <option value="namib">Namibia</option>
-                        <option value="nor">Norway</option>
+                        <option value="3500">Norway</option>
                         <option value="spain">Spain</option>
                         <option value="tanz">Tanzania</option>
                         <option value="turk">Turkey</option>
@@ -125,21 +142,51 @@
                 <div data-role="collapsible">
                     <h1><center>Car</center></h1>
 
+                    <form name="carpriv">
                     <h3>Private</h3>
                     <label for="basic">Distance Traveled:</label>
-                    <input type="number" name="name" id="basic" value="0"  /><br />
+                    <input type="number" name="carin1" id="carin1" value="0" onchange="calculate();" />
                     
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                        <legend>Type:</legend>
+                        <input type="radio" name="radio-choice" id="radio-choice-1" value="11.9" checked="checked" />
+                        <label for="radio-choice-1">Sedan</label>
+
+                        <input type="radio" name="radio-choice" id="radio-choice-2" value="7.23"  />
+                        <label for="radio-choice-2">SUV</label>
+                        </fieldset><br />
+                    </form>
+                    <br />
+                    <form name="cartaxi">
                     <h3>Taxi / Rental</h3>
                     <label for="basic">Distance Traveled:</label>
-                    <input type="number" name="name" id="basic" value="0"  /><br />
+                    <input type="number" name="carin2" id="carin2" value="0" onchange="calculate();" />
+
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                        <legend>Type:</legend>
+                        <input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" checked="checked" />
+                        <label for="radio-choice-1">Sedan</label>
+
+                        <input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2"  />
+                        <label for="radio-choice-2">SUV</label>
+                        </fieldset><br />
+                    </form>
+
                 </div>
 
                 <div data-role="collapsible">
                     <h1><center>Boat</center></h1>
 
+                    <form name="boat"
                     <label for="basic">Distance Traveled:</label>
-                    <input type="number" name="name" id="basic" value="0"  /><br />
+                    <input type="number" name="boatin1" id="boatin1" value="0" onchange="calculate();" /><br />
+                    </form>
                 </div>
+
+                <form name="results">
+                <label for="basic">Total Hectares:</label>
+                <input type="number" name="OUTPUT1" id="output" readonly >
+                </form>
 
             <center>
             <div data-type="horizontal" data-role="controlgroup">
