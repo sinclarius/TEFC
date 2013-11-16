@@ -22,15 +22,36 @@
         var USERINPUT4 = document.bus.busin2.value;
         var USERINPUT5 = document.boat.boatin1.value;
 
-        var carbseq = (10000/71000)
+        var carbseq = (10000/71000);
         
-        var trainlocal = (USERINPUT1 * 3.09)
-        var traininter = (USERINPUT2 * 2.46)
-        var buslocal = (USERINPUT3 * 3.77)
-        var businter = (USERINPUT4 * 0.92)
-        var boat = (USERINPUT5 * 0.125)
+        var USERINPUT6 = document.carpriv.carin1.value;
+        var radiochoicep1 = document.getElementById("radiochoicep1");
+        var radiochoicep2 = document.getElementById("radiochoicep2");
 
-        var tran = ((trainlocal + traininter + buslocal + businter + boat) * carbseq)/10000;
+        if (radiochoicep1.checked){
+              var USERINPUT7 =  11.9;
+        }else if (radiochoicep2.checked){
+              var USERINPUT7 = 7.23;
+        };
+
+        var USERINPUT8 = document.cartaxi.carin2.value;
+        var radiochoicet1 = document.getElementById("radiochoicet1");
+        var radiochoicet2 = document.getElementById("radiochoicet2");
+
+        if (radiochoicet1.checked){
+              var USERINPUT9 =  11.9;
+        }else if (radiochoicet2.checked){
+              var USERINPUT9 = 7.23;
+        };
+
+        var trainlocal = (USERINPUT1 * 3.09);
+        var traininter = (USERINPUT2 * 2.46);
+        var buslocal = (USERINPUT3 * 3.77);
+        var businter = (USERINPUT4 * 0.92);
+        var boat = (USERINPUT5 * 0.125);
+        var car = (((52.5) * (USERINPUT6 / USERINPUT7))) + ((52.5) * (USERINPUT8 / USERINPUT9)));
+
+        var tran = ((trainlocal + traininter + buslocal + businter + boat + car) * carbseq)/10000;
 
         document.results.OUTPUT1.value = tran;
 
@@ -139,14 +160,16 @@
                     
                         <fieldset data-role="controlgroup" data-type="horizontal">
                         <legend>Type:</legend>
-                        <input type="radio" name="radio-choice" id="radio-choice-1" value="11.9" checked="checked" />
-                        <label for="radio-choice-1">Sedan</label>
+                        <input type="radio" name="radiochoice" id="radiochoicep1" value="choice-1" checked="checked" />
+                        <label for="radiochoicep1">Sedan</label>
 
-                        <input type="radio" name="radio-choice" id="radio-choice-2" value="7.23"  />
-                        <label for="radio-choice-2">SUV</label>
+                        <input type="radio" name="radiochoice" id="radiochoicep2" value="choice-2"  />
+                        <label for="radiochoicep2">SUV</label>
                         </fieldset><br />
                     </form>
+
                     <br />
+
                     <form name="cartaxi">
                     <h3>Taxi / Rental</h3>
                     <label for="basic">Distance Traveled:</label>
@@ -154,11 +177,11 @@
 
                         <fieldset data-role="controlgroup" data-type="horizontal">
                         <legend>Type:</legend>
-                        <input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" checked="checked" />
-                        <label for="radio-choice-1">Sedan</label>
+                        <input type="radio" name="radiochoice" id="radiochoicet1" value="choice-1" checked="checked" />
+                        <label for="radiochoicet1">Sedan</label>
 
-                        <input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2"  />
-                        <label for="radio-choice-2">SUV</label>
+                        <input type="radio" name="radiochoice" id="radiochoicet2" value="choice-2"  />
+                        <label for="radiochoicet2">SUV</label>
                         </fieldset><br />
                     </form>
 
