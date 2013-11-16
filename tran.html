@@ -16,13 +16,12 @@
         function calculate() 
         {
 
+        var carbseq = (10000/71000);
         var USERINPUT1 = document.train.trainin1.value;
         var USERINPUT2 = document.train.trainin2.value;
         var USERINPUT3 = document.bus.busin1.value;
         var USERINPUT4 = document.bus.busin2.value;
         var USERINPUT5 = document.boat.boatin1.value;
-
-        var carbseq = (10000/71000);
         
         var USERINPUT6 = document.carpriv.carin1.value;
         var radiochoicep1 = document.getElementById("radiochoicep1");
@@ -44,6 +43,16 @@
                   var USERINPUT9 = 7.23;
             };
 
+        var USERINPUT10 = document.planeinput.planein1.value;
+        var radioplane1 = document.getElementById("radioplane1");
+        var radioplane2 = document.getElementById("radioplane2");
+
+            if (radioplane1.checked){
+                  var USERINPUT11 =  0.95;
+            }else if (radioplane2.checked){
+                  var USERINPUT11 = 1.1;
+            };
+
         var trainlocal = (USERINPUT1 * 3.09);
         var traininter = (USERINPUT2 * 2.46);
         var buslocal = (USERINPUT3 * 3.77);
@@ -51,8 +60,9 @@
         var boat = (USERINPUT5 * 0.125);
         var car1 = ((52.5) * (USERINPUT6 / USERINPUT7))
         var car2 = ((52.5) * (USERINPUT8 / USERINPUT9))
+        var plane = ((USERINPUT11 * 3.34) * USERINPUT10)
 
-        var tran = ((trainlocal + traininter + buslocal + businter + boat + car1 + car2) * carbseq)/10000;
+        var tran = ((trainlocal + traininter + buslocal + businter + boat + car1 + car2 + plane) * carbseq)/10000;
 
         document.results.OUTPUT1.value = tran;
 
@@ -70,7 +80,7 @@
                     <h1><center>Airplane</center></h1>
      
                     <div data-role="content">
-                    <form name="plane">
+                    <form name="planedrop">
                         <label for="select-choice-0" class="select">Academic Travel:</label>
                         <select name="select-choice-0" id="academictravel">
                         <option value="" disabled="disabled" selected="selected">Select an Academic Travel</option>
@@ -106,17 +116,21 @@
 
                     <p><center><b><font size="6"> or </font></b></center></p><br />
 
+                    <form name="planeinput">
+
                     <label for="basic">Distance Traveled:</label>
-                    <input type="number" name="name" id="basic" value="0"  /><br />
+                    <input type="number" name="planein1" id="planein1" value="0" onchange="calculate();" /><br />
 
-                    <fieldset data-role="controlgroup" data-type="horizontal">
+                    <fieldset data-role="controlgroup" data-type="horizontal" onchange="calculate();">
                     <legend>Class:</legend>
-                    <input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" checked="checked" />
-                    <label for="radio-choice-1">Economy</label>
+                    <input type="radio" name="radio-choice" id="radioplane1" value="choice-1" checked="checked" />
+                    <label for="radioplane1">Economy</label>
 
-                    <input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2"  />
-                    <label for="radio-choice-2">First / Business</label>
+                    <input type="radio" name="radio-choice" id="radioplane2" value="choice-2"  />
+                    <label for="radioplane2">First / Business</label>
                     </fieldset><br />
+
+                    </form>
                 
                     </div><!--datarole--> 
                 </div><!--collapsable--> 
