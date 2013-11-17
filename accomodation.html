@@ -47,50 +47,52 @@
      
             <div id="content" data-role="content">
                     <form name="TESTING">
-                    <center>
-                    <table data-role="table" id="table-column-toggle" class="ui-responsive table-stroke" data-mini="true">
-                        <thead>
-                            <tr>
-                                <th><u>Type</u></th>
-                                <th><u>Nights</u></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>Simple Guesthouse</th>
-                                <td><input type="number" name="INPUT1" id="input1" value="0" onchange="calculate();"/></td>
-                            </tr>
-                            <tr>
-                                <th>Luxurious Guesthouse</th>
-                                <td><input type="number" name="INPUT2" id="input2" value="0" onchange="calculate();"/></td>
-                            </tr>
-                            <tr>
-                                <th>1 - 2 Star</th>
-                                <td><input type="number" name="INPUT3" id="input3" value="0" onchange="calculate();"/></td>
-                            </tr>
-                            <tr>
-                                <th>3 - 4 Star</th>
-                                <td><input type="number" name="INPUT4" id="input4" value="0" onchange="calculate();"/></td>
-                            </tr>
-                            <tr>
-                                <th>5 Star</th>
-                                <td><input type="number" name="INPUT5" id="input5" value="0" onchange="calculate();"/></td>
-                            </tr>
-                            <tr>
-                                <th>Self Catering</th>
-                                <td><input type="number" name="INPUT6" id="input6" value="0" onchange="calculate();"/></td>
-                            </tr>
-                            <tr>
-                                <th>Private</th>
-                                <td><input type="number" name="INPUT7" id="input7" value="0" onchange="calculate();"/></td>
-                            </tr>
-                            <tr>
-                                <th>Boat</th>
-                                <td><input type="number" name="INPUT8" id="input8" value="0" onchange="calculate();"/></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    </center>
+
+                    <fieldset class="ui-grid-a">
+                    <div class="ui-block-a"><center><h3>Type of Accommodation</h3></center></div>
+                    <div class="ui-block-b"><center><h3>Number of Nights</h3></center></div>     
+                    </fieldset>
+
+                    <fieldset class="ui-grid-a">
+                    <div class="ui-block-a"><center><h5>Simple Guesthouse</h5></center></div>
+                    <div class="ui-block-b"><input type="number" name="INPUT1" id="input1" value="0" onchange="calculate();"/></div>     
+                    </fieldset>
+
+                    <fieldset class="ui-grid-a">
+                    <div class="ui-block-a"><center><h5>Luxurious Guesthouse</h5></center></div>
+                    <div class="ui-block-b"><input type="number" name="INPUT2" id="input2" value="0" onchange="calculate();"/></div>     
+                    </fieldset>
+
+                    <fieldset class="ui-grid-a">
+                    <div class="ui-block-a"><center><h5>1 - 2 Star</h5></center></div>
+                    <div class="ui-block-b"><input type="number" name="INPUT3" id="input3" value="0" onchange="calculate();"/></div>     
+                    </fieldset>
+
+                    <fieldset class="ui-grid-a">
+                    <div class="ui-block-a"><center><h5>3 - 4 Star</h5></center></div>
+                    <div class="ui-block-b"><input type="number" name="INPUT4" id="input4" value="0" onchange="calculate();"/></div>     
+                    </fieldset>
+
+                    <fieldset class="ui-grid-a">
+                    <div class="ui-block-a"><center><h5>5 Star</h5></center></div>
+                    <div class="ui-block-b"><input type="number" name="INPUT5" id="input5" value="0" onchange="calculate();"/></div>     
+                    </fieldset>
+
+                    <fieldset class="ui-grid-a">
+                    <div class="ui-block-a"><center><h5>Self Catering</h5></center></div>
+                    <div class="ui-block-b"><input type="number" name="INPUT6" id="input6" value="0" onchange="calculate();"/></div>     
+                    </fieldset>
+
+                    <fieldset class="ui-grid-a">
+                    <div class="ui-block-a"><center><h5>Private</h5></center></div>
+                    <div class="ui-block-b"><input type="number" name="INPUT7" id="input7" value="0" onchange="calculate();"/></div>     
+                    </fieldset>
+
+                     <fieldset class="ui-grid-a">
+                    <div class="ui-block-a"><center><h5>Boat</h5></center></div>
+                    <div class="ui-block-b"><input type="number" name="INPUT8" id="input8" value="0" onchange="calculate();"/></div>     
+                    </fieldset>
+
                     <label for="basic">Total Hectares:</label>
                     <input type="number" name="OUTPUT1" id="output" readonly >
                     </form>

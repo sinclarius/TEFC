@@ -20,6 +20,9 @@
         var carbseq = (10000/71000);
 
         <!-- Airplane -->
+        var dropdown = $("#academictravel").val();
+        document.planeinput.planein1.value = dropdown
+
         var USERINPUT1 = document.planeinput.planein1.value;
         var radioplane1 = document.getElementById("radioplane1");
         var radioplane2 = document.getElementById("radioplane2");
@@ -98,23 +101,23 @@
                     <div data-role="content">
                     <form name="planedrop">
                         <label for="select-choice-0" class="select">Academic Travel:</label>
-                        <select name="select-choice-0" id="academictravel">
+                        <select name="select-choice-0" id="academictravel" onchange="calculate();">
                         <option value="" disabled="disabled" selected="selected">Select an Academic Travel</option>
-                        <option value="amst">Amsterdam</option>
-                        <option value="austr">Australia</option>
+                        <option value="1590">Amsterdam</option>
+                        <option value="33200">Australia</option>
                         <option value="botkal">Botswana and the Kalahari Desert</option>
                         <option value="braz">Brazil</option>
                         <option value="berpar">Berlin and Paris</option>
                         <option value="bervie">Berlin and Vienna</option>
                         <option value="berwakr">Berlin, Warsaw, Kraców and Vienna</option>
                         <option value="folrh">Following the Rhine</option>
-                        <option value="greec">Greece</option>
+                        <option value="3020">Greece</option>
                         <option value="hamcop">Hamburg and Copenhagen</option>
-                        <option value="icel">Iceland</option>
+                        <option value="4800">Iceland</option>
                         <option value="ire">Ireland</option>
                         <option value="india">India</option>
                         <option value="japan">Japan</option>
-                        <option value="londo">London</option>
+                        <option value="1866">London</option>
                         <option value="malmoz">Malawi and Mozambique</option>
                         <option value="malzam">Malawi and Zambia</option>
                         <option value="moroc">Morocco</option>
