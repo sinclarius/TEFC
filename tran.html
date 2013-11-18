@@ -21,7 +21,7 @@
 
         <!-- Airplane -->
         var dropdown = $("#academictravel").val();
-        document.planeinput.planein1.value = dropdown;
+        document.planedrop.dropresult.value = dropdown;
 
         var USERINPUT1 = document.planeinput.planein1.value;
         var radioplane1 = document.getElementById("radioplane1");
@@ -67,7 +67,8 @@
         
 
         <!-- Calculations -->
-        var plane = ((USERINPUT2 * 3.34) * USERINPUT1)
+        var plane1 = ((USERINPUT2 * 3.34) * dropdown)
+        var plane2 = ((USERINPUT2 * 3.34) * USERINPUT1)
 
         var trainlocal = (USERINPUT3 * 3.09);
         var traininter = (USERINPUT4 * 2.46);
@@ -81,7 +82,7 @@
         var boat = (USERINPUT11 * 0.125);
 
         <!-- Total -->
-        var tran = ((trainlocal + traininter + buslocal + businter + boat + car1 + car2 + plane) * carbseq)/10000;
+        var tran = ((trainlocal + traininter + buslocal + businter + boat + car1 + car2 + plane1 + plane2) * carbseq)/10000;
 
         document.results.OUTPUT1.value = tran;
 
@@ -99,57 +100,66 @@
                     <h1><center>Airplane</center></h1>
      
                     <div data-role="content">
-                    <form name="planedrop">
-                        <label for="select-choice-0" class="select">Academic Travel:</label>
-                        <select name="select-choice-0" id="academictravel" onchange="calculate();">
-                        <option value="" disabled="disabled" selected="selected">Select an Academic Travel</option>
-                        <option value="1590">Amsterdam</option>
-                        <option value="33200">Australia</option>
-                        <option value="botkal">Botswana and the Kalahari Desert</option>
-                        <option value="braz">Brazil</option>
-                        <option value="berpar">Berlin and Paris</option>
-                        <option value="bervie">Berlin and Vienna</option>
-                        <option value="berwakr">Berlin, Warsaw, Kraców and Vienna</option>
-                        <option value="folrh">Following the Rhine</option>
-                        <option value="3020">Greece</option>
-                        <option value="hamcop">Hamburg and Copenhagen</option>
-                        <option value="4800">Iceland</option>
-                        <option value="ire">Ireland</option>
-                        <option value="india">India</option>
-                        <option value="japan">Japan</option>
-                        <option value="1866">London</option>
-                        <option value="malmoz">Malawi and Mozambique</option>
-                        <option value="malzam">Malawi and Zambia</option>
-                        <option value="moroc">Morocco</option>
-                        <option value="mozsasw">Mozambique, South Africa, and Swaziland</option>
-                        <option value="namib">Namibia</option>
-                        <option value="3500">Norway</option>
-                        <option value="spain">Spain</option>
-                        <option value="tanz">Tanzania</option>
-                        <option value="turk">Turkey</option>
-                        <option value="viebud">Vienna and Budapest</option>
-                        <option value="vbp">Vienna, Budapest and Prague</option>
-                    
-                        </select>
-                    </form>
+                        <form name="planedrop">
+                            <div class="ui-grid-a">
+                                <div class="ui-block-a">
+                                    <label for="select-choice-0" class="select">Academic Travel:</label>
+                                    <select name="select-choice-0" id="academictravel" onchange="calculate();">
+                                    <option value=""  selected="selected">Select an Academic Travel</option>
+                                    <option value="1590">Amsterdam</option>
+                                    <option value="33200">Australia</option>
+                                    <option value="botkal">Botswana and the Kalahari Desert</option>
+                                    <option value="braz">Brazil</option>
+                                    <option value="berpar">Berlin and Paris</option>
+                                    <option value="bervie">Berlin and Vienna</option>
+                                    <option value="berwakr">Berlin, Warsaw, Kraców and Vienna</option>
+                                    <option value="folrh">Following the Rhine</option>
+                                    <option value="3020">Greece</option>
+                                    <option value="hamcop">Hamburg and Copenhagen</option>
+                                    <option value="4800">Iceland</option>
+                                    <option value="ire">Ireland</option>
+                                    <option value="india">India</option>
+                                    <option value="japan">Japan</option>
+                                    <option value="1866">London</option>
+                                    <option value="malmoz">Malawi and Mozambique</option>
+                                    <option value="malzam">Malawi and Zambia</option>
+                                    <option value="moroc">Morocco</option>
+                                    <option value="mozsasw">Mozambique, South Africa, and Swaziland</option>
+                                    <option value="namib">Namibia</option>
+                                    <option value="3500">Norway</option>
+                                    <option value="1288">Paris</option>
+                                    <option value="spain">Spain</option>
+                                    <option value="tanz">Tanzania</option>
+                                    <option value="turk">Turkey</option>
+                                    <option value="viebud">Vienna and Budapest</option>
+                                    <option value="vbp">Vienna, Budapest and Prague</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="ui-block-b">
+                                    <label for="basic">Distance Traveled:</label>
+                                    <input type="number" name="dropresult" id="dropresult" value="0" readonly />
+                                </div>
+                            </div>
+                        </form>
 
                     <p><center><b><font size="6"> or </font></b></center></p><br />
 
-                    <form name="planeinput">
+                        <form name="planeinput">
 
-                    <label for="basic">Distance Traveled:</label>
-                    <input type="number" name="planein1" id="planein1" value="0" onchange="calculate();" /><br />
+                            <label for="basic">Distance Traveled:</label>
+                            <input type="number" name="planein1" id="planein1" value="0" onchange="calculate();" /><br />
 
-                    <fieldset data-role="controlgroup" data-type="horizontal" onchange="calculate();">
-                    <legend>Class:</legend>
-                    <input type="radio" name="radio-choice" id="radioplane1" value="choice-1" checked="checked" />
-                    <label for="radioplane1">Economy</label>
+                            <fieldset data-role="controlgroup" data-type="horizontal" onchange="calculate();">
+                            <legend>Class:</legend>
+                            <input type="radio" name="radio-choice" id="radioplane1" value="choice-1" checked="checked" />
+                            <label for="radioplane1">Economy</label>
 
-                    <input type="radio" name="radio-choice" id="radioplane2" value="choice-2"  />
-                    <label for="radioplane2">First / Business</label>
-                    </fieldset><br />
+                            <input type="radio" name="radio-choice" id="radioplane2" value="choice-2"  />
+                            <label for="radioplane2">First / Business</label>
+                            </fieldset><br />
 
-                    </form>
+                        </form>
                 
                     </div><!--datarole--> 
                 </div><!--collapsable--> 
