@@ -18,14 +18,14 @@
         var days = document.foodinput.daystrav.value;
 
         var slider = document.getElementById("slider").value;
-
-        if (slider = 0){
-                var hectequiv =  0.1931;
-        }else if (slider = 1){
-                var hectequiv = 0.2601;
+        if (slider=1){
+            var hectval=(5);
+        }else if (slider=2){
+            var hectval=(10);
         };
 
-        var food = ((hectequiv / 365) * days)
+
+        var food = (hectval * days)
 
         document.results.OUTPUT1.value = food;
 
