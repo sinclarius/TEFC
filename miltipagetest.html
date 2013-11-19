@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+    <title>TEFC</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="themes/flat.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0-rc.1/jquery.mobile-1.4.0-rc.1.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.0-rc.1/jquery.mobile-1.4.0-rc.1.min.js"></script>
+</head>
+<body>
+
+	<script type="text/javascript">
+        function calculate() {
+
+
+        <!-- ACTIVITY -->
+
+        var ACTIINPUT1 = document.ACTIVITY.AINPUT1.value;
+        var ACTIINPUT2 = document.ACTIVITY.AINPUT2.value;
+        var ACTIINPUT3 = document.ACTIVITY.AINPUT3.value;
+        var Acarbseq = (10000/71000)
+        var Aattrac = (ACTIINPUT1*6.2);
+        var Aentert = (ACTIINPUT2*9.4);
+        var Aactivi = (ACTIINPUT3*95.6);
+        var Aacti = ((Aattrac+Aentert+Aactivi)*Acarbseq)/10000;
+
+        document.ACTIVITY.AOUTPUT1.value = Aacti;
+
+        <!-- GOODS -->
+
+        var GOODINPUT1 = document.GOOD.GINPUT1.value;
+        var GOODINPUT2 = document.GOOD.GINPUT2.value;
+        var GOODINPUT3 = document.GOOD.GINPUT3.value;
+        var Gcarbseq = (10000/71000)
+        var Gclothi = ((GOODINPUT1*0.0003)/2.23);
+        var Gbookma = ((GOODINPUT2*0.00016)/0.21);
+        var Gtobalc = ((GOODINPUT3*0.00016)/1.14);
+        var Ggood = ((Gclothi+Gbookma+Gtobalc)*Gcarbseq)/10000;
+
+        document.GOOD.GOUTPUT1.value = Ggood;
+
+        }
+
+        </script>
+
+        
+<div data-role="page" id="acti">
+
+        
+        
+                <div data-role="header">
+                    <a href="index.html" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">No text</a>
+                    <h1>Activities</h1>
+                </div><!-- /header -->
+                <br />
+                <div data-role="content">
+                    <form name="ACTIVITY">
+                        <label for="basic">Attractions:</label>
+                        <input type="number" name="AINPUT1" id="input1" value="0" onchange="calculate();"/>
+                                <br />
+                        <label for="basic">Entertainment:</label>
+                        <input type="number" name="AINPUT2" id="input2" value="0" onchange="calculate();"/>
+                                <br />
+                        <label for="basic">Activities:</label>
+                        <input type="number" name="AINPUT3" id="input3" value="0" onchange="calculate();"/>
+                                <br />
+                        <label for="basic">Total Hectares:</label>
+                        <input type="number" name="AOUTPUT1" id="output" readonly >
+                                <br />
+                                <center>
+                                    <div data-type="horizontal" data-role="controlgroup">
+                                    <a href="acco.html" data-role="button" data-theme="b" data-inline="true">Back</a>
+                                    <a href="tutorial.html" data-role="button" data-theme="c" data-inline="true" data-transition="flip">Help</a>
+                                    <a href="#good" data-role="button" data-theme="b" data-inline="true">Next</a>
+                                </center>
+                                </div>
+
+                                <a href="all.html" data-role="button" data-theme="b" data-mini="true">Back to Main</a>
+
+                                </div><!-- /content -->
+                    </form>            
+                </div><!-- /content-->
+                
+</div><!-- /page-->
+
+<div data-role="page" id="good">
+
+				<div data-role="header">
+                    <a href="index.html" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">No text</a>
+                    <h1>Goods and Fiber</h1>
+                </div><!-- /header -->
+               
+                <div data-role="content">
+                <br />
+                    <form name="GOOD">
+                    <label for="basic">Clothing:</label>
+                    <input type="number" name="GINPUT1" id="input1" value="0" onchange="calculate();"/>
+                            <br />
+                    <label for="basic">Books and Magazines:</label>
+                    <input type="number" name="GINPUT2" id="input2" value="0" onchange="calculate();"/>
+                            <br />
+                    <label for="basic">Tobacco and Alcohol:</label>
+                    <input type="number" name="GINPUT3" id="input3" value="0" onchange="calculate();"/>
+                            <br />
+                    <label for="basic">Total Hectares:</label>
+                    <input type="number" name="GOUTPUT1" id="output" readonly >
+                            <br />
+                        <center>
+                        <div data-type="horizontal" data-role="controlgroup">
+                        <a href="#acti" data-role="button" data-theme="b" data-inline="true">Back</a>
+
+                        <a href="tutorial.html" data-rel="dialog" data-role="button" data-transition="pop">Help</a>
+
+                        <a href="food.html" data-role="button" data-theme="b" data-inline="true">Next</a>
+                        </center>
+                        </div>
+
+                        <a href="all.html" data-role="button" data-theme="b" data-mini="true">Back to Main</a>
+                        
+                    </form>
+                        
+                </div><!-- /content -->
+</div><!-- /page-->
+
+
+</body>
+</html>
