@@ -15,19 +15,32 @@
         <script type="text/javascript">
         function calculate() 
         {
-        var days = document.foodinput.daystrav.value;
+        var days = document.FOOD.daystrav.value;
 
         var slider = document.getElementById("slider").value;
-        if (slider=1){
-            var hectval=(5);
-        }else if (slider=2){
-            var hectval=(10);
+        
+        if (slider = 0){
+            var foodhect = 5;
+        }else if (slider = 1){
+            var foodhect = 10;
+        }else if (slider = 2){
+            var foodhect = 15;
+        }else if (slider = 3){
+            var foodhect = 20;
+        }else if (slider = 4){
+            var foodhect = 25;
+        }else if (slider = 5){
+            var foodhect = 30;
+        }else if (slider = 6){
+            var foodhect = 35;
+        }else {
+            var foodhect = 40;
         };
 
 
-        var food = (hectval * days)
+        var food = (foodhect * days);
 
-        document.results.OUTPUT1.value = food;
+        document.FOOD.FOUTPUT1.value = food;
 
         }
 
@@ -39,18 +52,16 @@
  
         <div id="content" data-role="content">
             
-            <form name="foodinput">
+            <form name="FOOD">
 
                 <label for="basic">Days Traveling:</label>
                 <input type="number" name="daystrav" id="daystrav" value="0" onchange="calculate();" />
 
                 <label for="slider-3">Servings of Meat per Day:</label>
                 <input type="range" name="slider" id="slider" min="0" max="7" value="0" data-show-value="true" data-popup-enabled="true" onchange="calculate();" />
-            </form>
 
-            <form name="results">
                 <label for="basic">Total Hectares:</label>
-                <input type="number" name="OUTPUT1" id="output" readonly >
+                <input type="number" name="FOUTPUT1" id="output" readonly >
             </form>
 
             <br />
