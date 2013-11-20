@@ -15,33 +15,31 @@
         <script type="text/javascript">
         function calculate() 
         {
-        var days = document.FOOD.daystrav.value;
+        var daysinput = document.FOOD.daystrav.value;
 
-        var slider = document.getElementById("slider").value;
-        
-        if (slider = 0){
-            var foodhect = 5;
-        }else if (slider = 1){
-            var foodhect = 10;
-        }else if (slider = 2){
-            var foodhect = 15;
-        }else if (slider = 3){
-            var foodhect = 20;
-        }else if (slider = 4){
-            var foodhect = 25;
-        }else if (slider = 5){
-            var foodhect = 30;
-        }else if (slider = 6){
-            var foodhect = 35;
-        }else {
-            var foodhect = 40;
-        };
+        var radiofood0 = document.getElementById("radiofood0");
+        var radiofood1 = document.getElementById("radiofood1");
+        var radiofood2 = document.getElementById("radiofood2");
+        var radiofood3 = document.getElementById("radiofood3");
+        var radiofood4 = document.getElementById("radiofood4");
+        var radiofood5 = document.getElementById("radiofood5");
+            if (radiofood0.checked){
+                  var foodhect =  0.1931;
+            }else if (radiofood1.checked){
+                  var foodhect = 0.2601;
+            }else if (radiofood2.checked){
+                  var foodhect = 0.3408;
+            }else if (radiofood3.checked){
+                  var foodhect = 0.4274;
+            }else if (radiofood4.checked){
+                  var foodhect = 0.532;
+            }else {
+                  var foodhect = 0.657;
+            };
 
-
-        var food = (foodhect * days);
+        var food = ((foodhect / 365) * daysinput);
 
         document.FOOD.FOUTPUT1.value = food;
-
         }
 
         </script>
@@ -57,28 +55,23 @@
                 <label for="basic">Days Traveling:</label>
                 <input type="number" name="daystrav" id="daystrav" value="0" onchange="calculate();" />
 
-                <fieldset data-role="controlgroup" data-type="horizontal" onchange="calculate();">
-                <legend>Servings of Meat per Day:</legend>
-                <input type="radio" name="radio-choice" id="foodchoice1" value="choice-1" />   
-                <label for="foodchoice1">0</label>
+                <fieldset data-role="controlgroup" data-type="horizontal">
+                    <legend>Servings of Meat per Day:</legend>
+                    <input type="radio" name="radio-choice" id="radiofood0" value="choice-1" checked="checked" onclick="calculate();" />
+                    <label for="radiofood0">0</label>
 
-                <input type="radio" name="radio-choice" id="foodchoice2" value="choice-2"  />
-                <label for="foodchoice2">1</label>
+                    <input type="radio" name="radio-choice" id="radiofood1" value="choice-2" onclick="calculate();" />
+                    <label for="radiofood1">1</label>
 
-                <input type="radio" name="radio-choice" id="foodchoice3" value="choice-3"  />
-                <label for="foodchoice3">2</label>
+                    <input type="radio" name="radio-choice" id="radiofood2" value="choice-3" onclick="calculate();" />
+                    <label for="radiofood2">2</label>
 
-                <input type="radio" name="radio-choice" id="foodchoice4" value="choice-4"  />
-                <label for="foodchoice4">3</label>
+                    <input type="radio" name="radio-choice" id="radiofood3" value="choice-4" onclick="calculate();" /><label for="radiofood3">3</label>
 
-                <input type="radio" name="radio-choice" id="foodchoice5" value="choice-5"  />
-                <label for="foodchoice5">4</label>
+                    <input type="radio" name="radio-choice" id="radiofood4" value="choice-4" onclick="calculate();" /><label for="radiofood4">4</label>
 
-                <input type="radio" name="radio-choice" id="foodchoice6" value="choice-6"  />
-                <label for="foodchoice6">5</label>
-                </fieldset><br />
-
-
+                    <input type="radio" name="radio-choice" id="radiofood5" value="choice-4" onclick="calculate();" /><label for="radiofood5">5</label>
+                </fieldset>
 
                 <label for="basic">Total Hectares:</label>
                 <input type="number" name="FOUTPUT1" id="output" readonly >

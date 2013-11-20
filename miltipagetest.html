@@ -14,8 +14,9 @@
 	<script type="text/javascript">
         function calculate() {
 		
-		<!-- carbon sequestration value -->
+		<!-- Multi use -->
         var carbseq = (10000/71000);
+        var daysinput = document.DAYS.daystrav.value;
 
     <!-- Transport --> 
         <!-- Airplane -->
@@ -123,9 +124,59 @@
 
         document.GOOD.GOUTPUT1.value = good;
 
+    <!-- FOOD -->
+
+        var radiofood0 = document.getElementById("radiofood0");
+        var radiofood1 = document.getElementById("radiofood1");
+        var radiofood2 = document.getElementById("radiofood2");
+        var radiofood3 = document.getElementById("radiofood3");
+        var radiofood4 = document.getElementById("radiofood4");
+        var radiofood5 = document.getElementById("radiofood5");
+            if (radiofood0.checked){
+                  var foodhect =  0.1931;
+            }else if (radiofood1.checked){
+                  var foodhect = 0.2601;
+            }else if (radiofood2.checked){
+                  var foodhect = 0.3408;
+            }else if (radiofood3.checked){
+                  var foodhect = 0.4274;
+            }else if (radiofood4.checked){
+                  var foodhect = 0.532;
+            }else {
+                  var foodhect = 0.657;
+            };
+
+        var food = ((foodhect / 365) * daysinput);
+
+        document.FOOD.FOUTPUT1.value = food;
+
         }
 
         </script>
+
+<div data-role="page" id="all">
+ 
+        <div id="header" data-role="header">
+            <a href="index.html" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">No text</a>
+            <h1>TEFC</h1>
+        </div><!-- /header -->
+             <div id="content" data-role="listview">
+                <form name="DAYS">
+                    <label for="basic">Days Spent Traveling:</label>
+                    <input type="number" name="daystrav" id="daystrav" value="0" onchange="calculate();" />
+                </form>
+                <center>
+                <li><a href="#tran" data-role="button">Transport</a></li>
+                <li><a href="#acco" data-role="button">Accommodation</a></li>
+                <li><a href="#acti" data-role="button">Activities</a></li>
+                <li><a href="#good" data-role="button">Goods</a></li>
+                <li><a href="#food" data-role="button">Food</a></li>
+                </center>
+            </div><!-- /content -->
+            <br />
+            
+        </div><!-- /content --> 
+</div><!-- /page -->
 
 <div data-role="page" id="tran">      
 
@@ -285,12 +336,12 @@
 
             <center>
             <div data-type="horizontal" data-role="controlgroup">
-            <a href="all.html" data-role="button" data-theme="b" data-inline="true">Back</a>
+            <a href="#all" data-role="button" data-theme="b" data-inline="true">Back</a>
             <a href="tutorial.html" data-role="button" data-theme="c" data-inline="true" data-transition="flip">Help</a>
             <a href="#acco" data-role="button" data-theme="b" data-inline="true">Next</a>
             </center>
 
-            <a href="all.html" data-role="button" data-theme="b" data-mini="true">Back to Main</a>
+            <a href="#all" data-role="button" data-theme="b" data-mini="true">Back to Main</a>
             </div><!-- /content -->
 
 </div><!-- /page -->
@@ -364,7 +415,7 @@
             </center>
             </div>
 
-            <a href="index.html" data-role="button" data-theme="b" data-mini="true">Back to Index</a>
+            <a href="#all" data-role="button" data-theme="b" data-mini="true">Back to Main</a>
             </div><!-- /content -->
  
       
@@ -400,7 +451,7 @@
                                     <a href="#good" data-role="button" data-theme="b" data-inline="true">Next</a>
                                 	</div>
                             	</center>
-                                <a href="all.html" data-role="button" data-theme="b" data-mini="true">Back to Main</a>
+                                <a href="#all" data-role="button" data-theme="b" data-mini="true">Back to Main</a>
                     </form>            
                 </div><!-- /content-->
                 
@@ -434,20 +485,64 @@
 
                         <a href="tutorial.html" data-rel="dialog" data-role="button" data-transition="pop">Help</a>
 
-                        <a href="food.html" data-role="button" data-theme="b" data-inline="true">Next</a>
+                        <a href="#food" data-role="button" data-theme="b" data-inline="true">Next</a>
                         </center>
                         </div>
 
-                        <a href="all.html" data-role="button" data-theme="b" data-mini="true">Back to Main</a>
+                        <a href="#all" data-role="button" data-theme="b" data-mini="true">Back to Main</a>
                         
                     </form>
                         
                 </div><!-- /content -->
 </div><!-- /page-->
 
+<div data-role="page" id="food">
 
+        <div data-role="header">
+            <h1>Food</h1>
+        </div><!-- /header -->
+ 
+        <div id="content" data-role="content">
+            
+            <form name="FOOD">
 
+                <fieldset data-role="controlgroup" data-type="horizontal">
+                    <legend>Servings of Meat per Day:</legend>
+                    <input type="radio" name="radio-choice" id="radiofood0" value="choice-1" checked="checked" onclick="calculate();" />
+                    <label for="radiofood0">0</label>
 
+                    <input type="radio" name="radio-choice" id="radiofood1" value="choice-2" onclick="calculate();" />
+                    <label for="radiofood1">1</label>
+
+                    <input type="radio" name="radio-choice" id="radiofood2" value="choice-3" onclick="calculate();" />
+                    <label for="radiofood2">2</label>
+
+                    <input type="radio" name="radio-choice" id="radiofood3" value="choice-4" onclick="calculate();" /><label for="radiofood3">3</label>
+
+                    <input type="radio" name="radio-choice" id="radiofood4" value="choice-4" onclick="calculate();" /><label for="radiofood4">4</label>
+
+                    <input type="radio" name="radio-choice" id="radiofood5" value="choice-4" onclick="calculate();" /><label for="radiofood5">5</label>
+                </fieldset>
+
+                <label for="basic">Total Hectares:</label>
+                <input type="number" name="FOUTPUT1" id="output" readonly >
+            </form>
+
+            <br />
+            <center><a href="#good" data-role="button" data-theme="b" data-inline="true">Back</a>
+
+            <a href="#popupBasic" data-rel="popup" data-role="button" data-inline="true" data-position-to="window">Help</a>
+            <div data-role="popup" id="popupBasic">
+            <h1><center>Help</center></h1>
+            <p>Please indicate the average number of servings of meat per day during your travel period. Slide the counter to choose between 0 and 7 servings<p>
+            </div>
+
+            <a href="#all" data-role="button" data-theme="b" data-inline="true">Next</a></center>
+            <br />
+            <a href="#all" data-role="button" data-theme="b" data-mini="true">Back to Main</a>
+        </div><!-- /content -->
+ 
+</div><!-- /page -->
 
 
 </body>
