@@ -57,8 +57,28 @@
                 <label for="basic">Days Traveling:</label>
                 <input type="number" name="daystrav" id="daystrav" value="0" onchange="calculate();" />
 
-                <label for="slider-3">Servings of Meat per Day:</label>
-                <input type="range" name="slider" id="slider" min="0" max="7" value="0" data-show-value="true" data-popup-enabled="true" onchange="calculate();" />
+                <fieldset data-role="controlgroup" data-type="horizontal" onchange="calculate();">
+                <legend>Servings of Meat per Day:</legend>
+                <input type="radio" name="radio-choice" id="foodchoice1" value="choice-1" />   
+                <label for="foodchoice1">0</label>
+
+                <input type="radio" name="radio-choice" id="foodchoice2" value="choice-2"  />
+                <label for="foodchoice2">1</label>
+
+                <input type="radio" name="radio-choice" id="foodchoice3" value="choice-3"  />
+                <label for="foodchoice3">2</label>
+
+                <input type="radio" name="radio-choice" id="foodchoice4" value="choice-4"  />
+                <label for="foodchoice4">3</label>
+
+                <input type="radio" name="radio-choice" id="foodchoice5" value="choice-5"  />
+                <label for="foodchoice5">4</label>
+
+                <input type="radio" name="radio-choice" id="foodchoice6" value="choice-6"  />
+                <label for="foodchoice6">5</label>
+                </fieldset><br />
+
+
 
                 <label for="basic">Total Hectares:</label>
                 <input type="number" name="FOUTPUT1" id="output" readonly >
