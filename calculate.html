@@ -89,7 +89,10 @@
     <!-- Transport --> 
         <!-- Airplane -->
         var travdropdown = $("#academictravel").val();
-        document.planedrop.dropresult.value = travdropdown;
+        document.TRAVCHOICEDISPLAY.dropresult.value = travdropdown;
+
+        var academictravelchoice = $("#academictravel").text();
+        document.TRAVCHOICEDISPLAY.TRAVELOUT.text = academictravelchoice;
 
         var TRANINPUT1 = document.planeinput.planein1.value;
         var radioplane1 = document.getElementById("radioplane1");
@@ -187,9 +190,43 @@
             <h1>TEFC</h1>
         </div><!-- /header -->
              <div id="content" data-role="listview">
+                <form name="planedrop">
+                                    <label for="select-choice-0" class="select">Academic Travel:</label>
+                                    <select name="academictravel" id="academictravel" onchange="calculate();">
+                                    <option value=""  selected="selected">Select an Academic Travel</option>
+                                    <option value="1590">Amsterdam</option>
+                                    <option value="33200">Australia</option>
+                                    <option value="botkal">Botswana and the Kalahari Desert</option>
+                                    <option value="braz">Brazil</option>
+                                    <option value="berpar">Berlin and Paris</option>
+                                    <option value="bervie">Berlin and Vienna</option>
+                                    <option value="berwakr">Berlin, Warsaw, Kraców and Vienna</option>
+                                    <option value="folrh">Following the Rhine</option>
+                                    <option value="3020">Greece</option>
+                                    <option value="hamcop">Hamburg and Copenhagen</option>
+                                    <option value="4800">Iceland</option>
+                                    <option value="ire">Ireland</option>
+                                    <option value="india">India</option>
+                                    <option value="japan">Japan</option>
+                                    <option value="1866">London</option>
+                                    <option value="malmoz">Malawi and Mozambique</option>
+                                    <option value="malzam">Malawi and Zambia</option>
+                                    <option value="moroc">Morocco</option>
+                                    <option value="mozsasw">Mozambique, South Africa, and Swaziland</option>
+                                    <option value="namib">Namibia</option>
+                                    <option value="3500">Norway</option>
+                                    <option value="1288">Paris</option>
+                                    <option value="spain">Spain</option>
+                                    <option value="tanz">Tanzania</option>
+                                    <option value="turk">Turkey</option>
+                                    <option value="viebud">Vienna and Budapest</option>
+                                    <option value="vbp">Vienna, Budapest and Prague</option>
+                                    </select>
+                </form>
                 <form name="DAYS">
                     <label for="basic">Days Spent Traveling:</label>
                     <input type="number" name="daystrav" id="daystrav" value="0" onchange="calculate();" />
+
                 </form>
                 <center>
                 <li><a href="#food" data-role="button">Food</a></li>
@@ -411,50 +448,20 @@
                     <h1><center>Airplane</center></h1>
      
                     <div data-role="content">
-                        <form name="planedrop">
+                        <form name="TRAVCHOICEDISPLAY">
                             <div class="ui-grid-a">
                                 <div class="ui-block-a">
-                                    <label for="select-choice-0" class="select">Academic Travel:</label>
-                                    <select name="select-choice-0" id="academictravel" onchange="calculate();">
-                                    <option value=""  selected="selected">Select an Academic Travel</option>
-                                    <option value="1590">Amsterdam</option>
-                                    <option value="33200">Australia</option>
-                                    <option value="botkal">Botswana and the Kalahari Desert</option>
-                                    <option value="braz">Brazil</option>
-                                    <option value="berpar">Berlin and Paris</option>
-                                    <option value="bervie">Berlin and Vienna</option>
-                                    <option value="berwakr">Berlin, Warsaw, Kraców and Vienna</option>
-                                    <option value="folrh">Following the Rhine</option>
-                                    <option value="3020">Greece</option>
-                                    <option value="hamcop">Hamburg and Copenhagen</option>
-                                    <option value="4800">Iceland</option>
-                                    <option value="ire">Ireland</option>
-                                    <option value="india">India</option>
-                                    <option value="japan">Japan</option>
-                                    <option value="1866">London</option>
-                                    <option value="malmoz">Malawi and Mozambique</option>
-                                    <option value="malzam">Malawi and Zambia</option>
-                                    <option value="moroc">Morocco</option>
-                                    <option value="mozsasw">Mozambique, South Africa, and Swaziland</option>
-                                    <option value="namib">Namibia</option>
-                                    <option value="3500">Norway</option>
-                                    <option value="1288">Paris</option>
-                                    <option value="spain">Spain</option>
-                                    <option value="tanz">Tanzania</option>
-                                    <option value="turk">Turkey</option>
-                                    <option value="viebud">Vienna and Budapest</option>
-                                    <option value="vbp">Vienna, Budapest and Prague</option>
-                                    </select>
+                                    <label for="basic">Academic Travel:</label>
+                                    <input type="text" name="TRAVELOUT" id="output1" readonly >
                                 </div>
-                                
                                 <div class="ui-block-b">
                                     <label for="basic">Distance Traveled:</label>
-                                    <input type="number" name="dropresult" id="dropresult" value="0" readonly />
+                                    <input type="number" name="dropresult" id="output2" readonly >
                                 </div>
                             </div>
                         </form>
 
-                    <p><center><b><font size="6"> or </font></b></center></p><br />
+                    <p><center><b><font size="6"> and </font></b></center></p><br />
 
                         <form name="planeinput">
 
