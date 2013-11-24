@@ -91,8 +91,6 @@
         var travdropdown = $("#academictravel").val();
         document.TRAVCHOICEDISPLAY.dropresult.value = travdropdown;
 
-        var academictravelchoice = $("#academictravel").text();
-        document.TRAVCHOICEDISPLAY.TRAVELOUT.text = academictravelchoice;
 
         var TRANINPUT1 = document.planeinput.planein1.value;
         var radioplane1 = document.getElementById("radioplane1");
@@ -156,12 +154,17 @@
 
         var totalhectare = (tran + acco + acti + good + food);
 
-        document.SUMMARY.FOODOUTPUT.value = food;
-        document.SUMMARY.GOODOUTPUT.value = good;
-        document.SUMMARY.ACTIOUTPUT.value = acti;
-        document.SUMMARY.ACCOOUTPUT.value = acco;
-        document.SUMMARY.TRANOUTPUT.value = tran;
         document.SUMMARY.TOTALOUTPUT.value = totalhectare;
+
+        var hectareyear = ((totalhectare / daysinput) * 365)
+
+        document.SUMMARY.TOTALYEAROUTPUT.value = hectareyear;
+
+        var compareto = $("#compareto").val();
+
+        var comparevalue = ((hectareyear * 107639) / compareto); <!-- WHEN COMPARING TO SQUARE FEET -->
+
+        document.SUMMARY.COMPAREOUTPUT.value = comparevalue;
 
         }
 
@@ -568,23 +571,21 @@
 
 <div data-role="page" id="summary">
     <form name="SUMMARY">
-        <label for="basic">Food:</label>
-        <input type="number" name="FOODOUTPUT" id="output" readonly >
-
-        <label for="basic">Goods and Fiber:</label>
-        <input type="number" name="GOODOUTPUT" id="output" readonly >
-
-        <label for="basic">Activities:</label>
-        <input type="number" name="ACTIOUTPUT" id="output" readonly >
-
-        <label for="basic">Accomodation:</label>
-        <input type="number" name="ACCOOUTPUT" id="output" readonly >
-
-        <label for="basic">Transport:</label>
-        <input type="number" name="TRANOUTPUT" id="output" readonly >
 
         <label for="basic">Total Hectares:</label>
         <input type="number" name="TOTALOUTPUT" id="output" readonly >
+
+        <label for="basic">Hectares per year:</label>
+        <input type="number" name="TOTALYEAROUTPUT" id="output" readonly >
+
+        <div id="content" data-role="listview">
+                    <select name="compareto" id="compareto" onchange="calculate();">
+                    <option value=""  selected="selected">Compare your footprint to...</option>
+                    <option value="13454.72">Olympic Swimming Pools</option>
+                    <option value="57600">American Football Field</option>
+                    </select>
+        </div>
+        <input type="number" name="COMPAREOUTPUT" id="compareoutput" readonly >
     </form>
 
     <center><a href="#tran" data-role="button" data-theme="b" data-inline="true">Back</a>
