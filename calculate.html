@@ -166,6 +166,11 @@
 
         document.SUMMARY.COMPAREOUTPUT.value = comparevalue;
 
+        var homecountrydrop = $("#homecountrydrop").val();
+        document.SUMMARY.HOMECOUNTRYOUTPUT.value = homecountrydrop;
+        var homecountrycompare = (hectareyear / homecountrydrop);
+        document.SUMMARY.HOMECOUNTRYCOMPARE.value = homecountrycompare;
+
         }
 
         </script>
@@ -179,20 +184,20 @@
  
         <div id="content" data-role="listview">
             
-            <a href="#all" data-role="button">Start</a>
+            <a href="#userdatainput" data-role="button">Start</a>
             <a href="tutorial.html" data-role="button">Tutorial</a>
         </div><!-- /content -->
 
  
     </div><!-- /page -->
 
-<div data-role="page" id="all">
+<div data-role="page" id="userdatainput">
  
         <div id="header" data-role="header">
             <a href="#index" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">No text</a>
             <h1>TEFC</h1>
         </div><!-- /header -->
-             <div id="content" data-role="listview">
+            <div id="content" data-role="listview">
                 <form name="planedrop">
                                     <select name="academictravel" id="academictravel" onchange="calculate();">
                                     <option value=""  selected="selected">Select an Academic Travel</option>
@@ -230,6 +235,89 @@
                     <input type="number" name="daystrav" id="daystrav" value="0" onchange="calculate();" />
 
                 </form>
+
+                <form name="homecountry">
+                                    <select name="homecountrydrop" id="homecountrydrop" onchange="calculate();">
+                                    <option value=""  selected="selected">Home Country</option>
+                                    <option value="1.05">Albania</option>
+                                    <option value="5.57">Argentina</option>
+                                    <option value="1.01">Armenia</option>
+                                    <option value="5.44">Austria</option>
+                                    <option value="1.55">Azerbaijan</option>
+                                    <option value="4.8">Belgium</option>
+                                    <option value="2.47">Bosnia and Herzegovina</option>
+                                    <option value="3.46">Brazil</option>
+                                    <option value="4.3">Bulgaria</option>
+                                    <option value="12.12">Canada</option>
+                                    <option value="1.7">Colombia</option>
+                                    <option value="3.21">Croatia</option>
+                                    <option value="5.95">Czech Republic</option>
+                                    <option value="6.23">Denmark</option>
+                                    <option value="2.08">Ecuador</option>
+                                    <option value="1.29">Egypt</option>
+                                    <option value="1.27">El Salvador</option>
+                                    <option value="8.86">Estonia</option>
+                                    <option value="0.89">Georgia</option>
+                                    <option value="4.72">Germany</option>
+                                    <option value="3.94">Greece</option>
+                                    <option value="1.48">Guatemala</option>
+                                    <option value="3.45">Hungary</option>
+                                    <option value="0.91">India</option>
+                                    <option value="2.56">Iran</option>
+                                    <option value="3.07">Israel</option>
+                                    <option value="3.08">Italy</option>
+                                    <option value="3.55">Japan</option>
+                                    <option value="1.18">Jordan</option>
+                                    <option value="5.27">Kazakhstan</option>
+                                    <option value="1.18">Lebanon</option>
+                                    <option value="2.4">Libya</option>
+                                    <option value="9.4">Luxembourg</option>
+                                    <option value="2.23">Mexico</option>
+                                    <option value="5.32">Mongolia</option>
+                                    <option value="9.82">Norway</option>
+                                    <option value="4.56">Oman</option>
+                                    <option value="0.71">Pakistan</option>
+                                    <option value="4.11">Poland</option>
+                                    <option value="5.15">Russia</option>
+                                    <option value="4.39">Saudi Arabia</option>
+                                    <option value="2.4">Serbia</option>
+                                    <option value="3.88">Slovenia</option>
+                                    <option value="3.79">South Korea</option>
+                                    <option value="4.13">Spain</option>
+                                    <option value="8.39">Sweden</option>
+                                    <option value="2.68">Switzerland</option>
+                                    <option value="1.4">Syria</option>
+                                    <option value="4.2">Netherlands</option>
+                                    <option value="6.4">Trinidad and Tobago</option>
+                                    <option value="2.13">Turkey</option>
+                                    <option value="4.0">Turkmenistan</option>
+                                    <option value="6.22">United Arab Emirates</option>
+                                    <option value="3.31">Ukraine</option>
+                                    <option value="3.38">United Kingdom</option>
+                                    <option value="7.99">United States of America</option>
+                                    <option value="2.57">Venezuela</option>
+                                    <option value="2.7">Global Average</option>
+                                    </select>
+                </form>
+
+                <center><a href="#index" data-role="button" data-theme="b" data-inline="true">Back</a>
+
+                <a href="#popupBasic" data-rel="popup" data-role="button" data-inline="true" data-position-to="window">Help</a>
+                <div data-role="popup" id="popupBasic">
+                <h1><center>Help</center></h1>
+                <p>Please input the requested information. Several calculations will be based on the days input and academic travel choice. If you would like to see a comparison at the end, please indicate your country of origin.<p>
+                </div>
+
+                <a href="#all" data-role="button" data-theme="b" data-inline="true">Next</a></center>
+            </div><!-- /content -->
+</div><!-- /page -->
+
+<div data-role="page" id="all">
+        <div id="header" data-role="header">
+            <a href="#index" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">No text</a>
+            <h1>TEFC</h1>
+        </div><!-- /header -->
+            <div id="content" data-role="listview">
                 <center>
                 <li><a href="#food" data-role="button">Food</a></li>
                 <li><a href="#good" data-role="button">Goods</a></li>
@@ -239,8 +327,16 @@
                 </center>
             </div><!-- /content -->
             <br />
-            
-        </div><!-- /content --> 
+                <center><a href="#userdatainput" data-role="button" data-theme="b" data-inline="true">Back</a>
+
+                <a href="#popupBasic" data-rel="popup" data-role="button" data-inline="true" data-position-to="window">Help</a>
+                <div data-role="popup" id="popupBasic">
+                <h1><center>Help</center></h1>
+                <p>Please input the requested information. Several calculations will be based on the days input and academic travel choice. If you would like to see a comparison at the end, please indicate your country of origin.<p>
+                </div>
+
+                <a href="#food" data-role="button" data-theme="b" data-inline="true">Next</a></center>
+ 
 </div><!-- /page -->
 
 <div data-role="page" id="food">
@@ -582,7 +678,7 @@
 
         <label for="basic">Hectares per year:</label>
         <input type="number" name="TOTALYEAROUTPUT" id="output" readonly >
-
+        <br /><br />
         <div id="content" data-role="listview">
                     <select name="compareto" id="compareto" onchange="calculate();">
                     <option value=""  selected="selected">Compare your footprint to...</option>
@@ -591,6 +687,13 @@
                     </select>
         </div>
         <input type="number" name="COMPAREOUTPUT" id="compareoutput" readonly >
+        <br /><br />
+        <label for="basic">Average footprint in your home country:</label>
+        <input type="number" name="HOMECOUNTRYOUTPUT" id="homecountryoutput" readonly data-inline="true">
+
+        <label for="basic">Comparison to Travel Footprint:</label>
+        <input type="number" name="HOMECOUNTRYCOMPARE" id="homecountrycompare" readonly data-inline="true">
+
     </form>
 
     <center><a href="#tran" data-role="button" data-theme="b" data-inline="true">Back</a>
