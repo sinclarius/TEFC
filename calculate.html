@@ -173,7 +173,7 @@
   <div data-role="page" id="index">
  
         <div data-role="header">
-            <a href="index.html" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">No text</a>
+            <a href="#index" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">No text</a>
             <h1>TEFC</h1>
         </div><!-- /header -->
  
@@ -189,7 +189,7 @@
 <div data-role="page" id="all">
  
         <div id="header" data-role="header">
-            <a href="index.html" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">No text</a>
+            <a href="#index" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">No text</a>
             <h1>TEFC</h1>
         </div><!-- /header -->
              <div id="content" data-role="listview">
@@ -245,7 +245,8 @@
 
 <div data-role="page" id="food">
 
-        <div data-role="header">
+        <div id="header" data-role="header">
+            <a href="#index" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">No text</a>
             <h1>Food</h1>
         </div><!-- /header -->
  
@@ -294,7 +295,7 @@
 <div data-role="page" id="good">
 
                 <div data-role="header">
-                    <a href="index.html" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">No text</a>
+                    <a href="#index" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">No text</a>
                     <h1>Goods and Fiber</h1>
                 </div><!-- /header -->
                
@@ -333,7 +334,7 @@
 <div data-role="page" id="acti">
 
                 <div data-role="header">
-                    <a href="index.html" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">No text</a>
+                    <a href="#index" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">No text</a>
                     <h1>Activities</h1>
                 </div><!-- /header -->
                 <br />
@@ -368,7 +369,7 @@
 
  
             <div data-role="header">
-            <a href="index.html" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">No text</a>
+            <a href="#index" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">No text</a>
             <h1>Accomodation</h1>
             </div><!-- /header -->
      
@@ -441,8 +442,8 @@
 
 <div data-role="page" id="tran">      
 
-<div data-role="header">
-        <a href="index.html" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">No text</a>
+        <div data-role="header">
+        <a href="#index" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">No text</a>
         <h1>Transport</h1>
         </div><!-- /header -->
 
@@ -462,7 +463,7 @@
                             <label for="basic">Additional Distance Traveled:</label>
                             <input type="number" name="planein1" id="planein1" value="0" onchange="calculate();" /><br />
 
-                            <fieldset data-role="controlgroup" data-type="horizontal" onchange="calculate();">
+                            <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" onchange="calculate();">
                             <legend>Class:</legend>
                             <input type="radio" name="radio-choice" id="radioplane1" value="choice-1" checked="checked" />
                             <label for="radioplane1">Economy</label>
@@ -514,7 +515,7 @@
                     <label for="basic">Distance Traveled:</label>
                     <input type="number" name="carin1" id="carin1" value="0" onchange="calculate();" />
                     
-                        <fieldset data-role="controlgroup" data-type="horizontal" onchange="calculate();">
+                        <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" onchange="calculate();">
                         <legend>Type:</legend>
                         <input type="radio" name="radiochoice" id="radiochoicep1" value="choice-1" checked="checked" />
                         <label for="radiochoicep1">Sedan</label>
@@ -531,7 +532,7 @@
                     <label for="basic">Distance Traveled:</label>
                     <input type="number" name="carin2" id="carin2" value="0" onchange="calculate();" />
 
-                        <fieldset data-role="controlgroup" data-type="horizontal" onchange="calculate();">
+                        <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" onchange="calculate();">
                         <legend>Type:</legend>
                         <input type="radio" name="radiochoice" id="radiochoicet1" value="choice-1" checked="checked" />
                         <label for="radiochoicet1">Sedan</label>
@@ -570,6 +571,10 @@
 </div><!-- /page -->
 
 <div data-role="page" id="summary">
+    <div data-role="header">
+        <a href="#index" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">No text</a>
+        <h1>Results</h1>
+    </div><!-- /header -->
     <form name="SUMMARY">
 
         <label for="basic">Total Hectares:</label>
