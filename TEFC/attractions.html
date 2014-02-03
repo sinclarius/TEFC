@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <title>TEFC</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" media="screen and (min-device-width: 800px)" href="stylesheet.css" >
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css">
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+</head>
+<body>
+
+<form name="TESTING">
+		<div data-role="header">
+            <h1>Activities</h1>
+        </div><!-- /header -->
+<label for="basic">Attractions:</label>
+<input type="number" name="INPUT1" id="input1" value="0" onchange="calculate();"/>
+
+<label for="basic">Entertainment:</label>
+<input type="number" name="INPUT2" id="input2" value="0" onchange="calculate();"/>
+
+<label for="basic">Activities:</label>
+<input type="number" name="INPUT3" id="input3" value="0" onchange="calculate();"/>
+
+<label for="basic">Total Hectares:</label>
+<input type="number" name="OUTPUT1" id="output">
+
+
+</form>
+
+<script type="text/javascript">
+function calculate() {
+
+var USERINPUT1 = document.TESTING.INPUT1.value;
+var USERINPUT2 = document.TESTING.INPUT2.value;
+var USERINPUT3 = document.TESTING.INPUT3.value;
+var carbseq = (10000/71000)
+var CALC1 = (USERINPUT1*6.2);
+var CALC2 = (USERINPUT2*9.4);
+var CALC3 = (USERINPUT3*95.6);
+var CALC4 = ((CALC1+CALC2+CALC3)*carbseq)/10000;
+
+document.TESTING.OUTPUT1.value = CALC4;
+
+}
+
+</script>
+</body>
+</html>

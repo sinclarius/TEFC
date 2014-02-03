@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+<head>
+    <title>TEFC</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="themes/flat.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0-rc.1/jquery.mobile-1.4.0-rc.1.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.0-rc.1/jquery.mobile-1.4.0-rc.1.min.js"></script>
+</head>
+<body>
+    <div data-role="page">
+
+        <script type="text/javascript">
+        function calculate() 
+        {
+
+        <!-- carbon sequestration value -->
+        var carbseq = (10000/71000);
+
+        <!-- Airplane -->
+        var dropdown = $("#academictravel").val();
+        document.planedrop.dropresult.value = dropdown;
+
+        var USERINPUT1 = document.planeinput.planein1.value;
+        var radioplane1 = document.getElementById("radioplane1");
+        var radioplane2 = document.getElementById("radioplane2");
+
+            if (radioplane1.checked){
+                  var USERINPUT2 =  0.95;
+            }else if (radioplane2.checked){
+                  var USERINPUT2 = 1.1;
+            };
+
+        <!-- Train -->
+        var USERINPUT3 = document.train.trainin1.value;
+        var USERINPUT4 = document.train.trainin2.value;
+
+        <!-- Bus -->
+        var USERINPUT5 = document.bus.busin1.value;
+        var USERINPUT6 = document.bus.busin2.value;
+
+        <!-- Car -->
+        var USERINPUT7 = document.carpriv.carin1.value;
+        var radiochoicep1 = document.getElementById("radiochoicep1");
+        var radiochoicep2 = document.getElementById("radiochoicep2");
+
+            if (radiochoicep1.checked){
+                  var USERINPUT8 =  11.9;
+            }else if (radiochoicep2.checked){
+                  var USERINPUT8 = 7.23;
+            };
+
+        var USERINPUT9 = document.cartaxi.carin2.value;
+        var radiochoicet1 = document.getElementById("radiochoicet1");
+        var radiochoicet2 = document.getElementById("radiochoicet2");
+
+            if (radiochoicet1.checked){
+                  var USERINPUT10 =  11.9;
+            }else if (radiochoicet2.checked){
+                  var USERINPUT10 = 7.23;
+            };
+
+        <!-- Boat -->
+        var USERINPUT11 = document.boat.boatin1.value;
+        
+
+        <!-- Calculations -->
+        var plane1 = ((USERINPUT2 * 3.34) * dropdown)
+        var plane2 = ((USERINPUT2 * 3.34) * USERINPUT1)
+
+        var trainlocal = (USERINPUT3 * 3.09);
+        var traininter = (USERINPUT4 * 2.46);
+        
+        var buslocal = (USERINPUT5 * 3.77);
+        var businter = (USERINPUT6 * 0.92);
+        
+        var car1 = ((52.5) * (USERINPUT7 / USERINPUT8))
+        var car2 = ((52.5) * (USERINPUT9 / USERINPUT10))
+        
+        var boat = (USERINPUT11 * 0.125);
+
+        <!-- Total -->
+        var tran = ((trainlocal + traininter + buslocal + businter + boat + car1 + car2 + plane1 + plane2) * carbseq)/10000;
+
+        document.results.OUTPUT1.value = tran;
+
+        }
+
+        </script>
+
+ 
+        <div data-role="header">
+        <a href="index.html" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all">No text</a>
+        <h1>Transport</h1>
+        </div><!-- /header -->
+
+                <div data-role="collapsible">
+                    <h1><center>Airplane</center></h1>
+     
+                    <div data-role="content">
+                        <form name="planedrop">
+                            <div class="ui-grid-a">
+                                <div class="ui-block-a">
+                                    <label for="select-choice-0" class="select">Academic Travel:</label>
+                                    <select name="select-choice-0" id="academictravel" onchange="calculate();">
+                                    <option value=""  selected="selected">Select an Academic Travel</option>
+                                    <option value="1590">Amsterdam</option>
+                                    <option value="33200">Australia</option>
+                                    <option value="botkal">Botswana and the Kalahari Desert</option>
+                                    <option value="braz">Brazil</option>
+                                    <option value="berpar">Berlin and Paris</option>
+                                    <option value="bervie">Berlin and Vienna</option>
+                                    <option value="berwakr">Berlin, Warsaw, Kraców and Vienna</option>
+                                    <option value="folrh">Following the Rhine</option>
+                                    <option value="3020">Greece</option>
+                                    <option value="hamcop">Hamburg and Copenhagen</option>
+                                    <option value="4800">Iceland</option>
+                                    <option value="ire">Ireland</option>
+                                    <option value="india">India</option>
+                                    <option value="japan">Japan</option>
+                                    <option value="1866">London</option>
+                                    <option value="malmoz">Malawi and Mozambique</option>
+                                    <option value="malzam">Malawi and Zambia</option>
+                                    <option value="moroc">Morocco</option>
+                                    <option value="mozsasw">Mozambique, South Africa, and Swaziland</option>
+                                    <option value="namib">Namibia</option>
+                                    <option value="3500">Norway</option>
+                                    <option value="1288">Paris</option>
+                                    <option value="spain">Spain</option>
+                                    <option value="tanz">Tanzania</option>
+                                    <option value="turk">Turkey</option>
+                                    <option value="viebud">Vienna and Budapest</option>
+                                    <option value="vbp">Vienna, Budapest and Prague</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="ui-block-b">
+                                    <label for="basic">Distance Traveled:</label>
+                                    <input type="number" name="dropresult" id="dropresult" value="0" readonly />
+                                </div>
+                            </div>
+                        </form>
+
+                    <p><center><b><font size="6"> or </font></b></center></p><br />
+
+                        <form name="planeinput">
+
+                            <label for="basic">Distance Traveled:</label>
+                            <input type="number" name="planein1" id="planein1" value="0" onchange="calculate();" /><br />
+
+                            <fieldset data-role="controlgroup" data-type="horizontal" onchange="calculate();">
+                            <legend>Class:</legend>
+                            <input type="radio" name="radio-choice" id="radioplane1" value="choice-1" checked="checked" />
+                            <label for="radioplane1">Economy</label>
+
+                            <input type="radio" name="radio-choice" id="radioplane2" value="choice-2"  />
+                            <label for="radioplane2">First / Business</label>
+                            </fieldset><br />
+
+                        </form>
+                
+                    </div><!--datarole--> 
+                </div><!--collapsable--> 
+
+                <div data-role="collapsible">
+                    <h1><center>Train</center></h1>
+
+                    <form name="train">
+                    <h3>Local</h3>
+                    <label for="basic">Distance Traveled:</label>
+                    <input type="number" name="trainin1" id="trainin1" value="0" onchange="calculate();" /><br />
+                
+                    <h3>Intercity</h3>
+                    <label for="basic">Distance Traveled:</label>
+                    <input type="number" name="trainin2" id="trainin2" value="0" onchange="calculate();" /><br />
+                    </form>
+                
+                </div><!--collapsable-->
+
+                <div data-role="collapsible">
+                    <h1><center>Bus</center></h1>
+
+                    <form name="bus">
+                    <h3>Local</h3>
+                    <label for="basic">Distance Traveled:</label>
+                    <input type="number" name="busin1" id="busin1" value="0" onchange="calculate();" /><br />
+                
+                    <h3>Intercity</h3>
+                    <label for="basic">Distance Traveled:</label>
+                    <input type="number" name="busin2" id="busin2" value="0" onchange="calculate();" /><br />
+                    </form>
+
+                </div><!--collapsable-->
+
+                <div data-role="collapsible">
+                    <h1><center>Car</center></h1>
+
+                    <form name="carpriv">
+                    <h3>Private</h3>
+                    <label for="basic">Distance Traveled:</label>
+                    <input type="number" name="carin1" id="carin1" value="0" onchange="calculate();" />
+                    
+                        <fieldset data-role="controlgroup" data-type="horizontal" onchange="calculate();">
+                        <legend>Type:</legend>
+                        <input type="radio" name="radiochoice" id="radiochoicep1" value="choice-1" checked="checked" />
+                        <label for="radiochoicep1">Sedan</label>
+
+                        <input type="radio" name="radiochoice" id="radiochoicep2" value="choice-2"  />
+                        <label for="radiochoicep2">SUV</label>
+                        </fieldset><br />
+                    </form>
+
+                    <br />
+
+                    <form name="cartaxi">
+                    <h3>Taxi / Rental</h3>
+                    <label for="basic">Distance Traveled:</label>
+                    <input type="number" name="carin2" id="carin2" value="0" onchange="calculate();" />
+
+                        <fieldset data-role="controlgroup" data-type="horizontal" onchange="calculate();">
+                        <legend>Type:</legend>
+                        <input type="radio" name="radiochoice" id="radiochoicet1" value="choice-1" checked="checked" />
+                        <label for="radiochoicet1">Sedan</label>
+
+                        <input type="radio" name="radiochoice" id="radiochoicet2" value="choice-2"  />
+                        <label for="radiochoicet2">SUV</label>
+                        </fieldset><br />
+                    </form>
+
+                </div>
+
+                <div data-role="collapsible">
+                    <h1><center>Boat</center></h1>
+
+                    <form name="boat"
+                    <label for="basic">Distance Traveled:</label>
+                    <input type="number" name="boatin1" id="boatin1" value="0" onchange="calculate();" /><br />
+                    </form>
+                </div>
+
+                <form name="results">
+                <label for="basic">Total Hectares:</label>
+                <input type="number" name="OUTPUT1" id="output" readonly >
+                </form>
+
+            <center>
+            <div data-type="horizontal" data-role="controlgroup">
+            <a href="all.html" data-role="button" data-theme="b" data-inline="true">Back</a>
+            <a href="tutorial.html" data-role="button" data-theme="c" data-inline="true" data-transition="flip">Help</a>
+            <a href="acco.html" data-role="button" data-theme="b" data-inline="true">Next</a>
+            </center>
+
+            <a href="all.html" data-role="button" data-theme="b" data-mini="true">Back to Main</a>
+            </div><!-- /content -->
+
+    </div><!-- /page -->
+</body>
+</html>

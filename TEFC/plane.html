@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <title>TEFC</title>
+</head>
+<body>
+<div data-role="page">
+
+    <script type="text/javascript">
+    function calculate() 
+    {
+    $('#chosen_a').change(function(){
+      var criteria_id =  $(':selected',this).data('id');
+    $('.criteria_rate').val(criteria_id);
+    });
+    }
+    
+    </script>
+
+<select name="criteria_title" id="chosen_a" data-placeholder="Select Category" class="chzn_z span3 dropDownId chzn-done" >
+        <option value=""></option>
+        <option value="1" data-id="10">a</option>
+        <option value="2" data-id="20">b</option>
+        <option value="3" data-id="30">c</option>
+        <option value="4" data-id="40">d</option>
+        <option value="5" data-id="50">e</option>
+   </select>
+
+
+
+<div class=" control-group formSep template">
+<label for="input01" class="control-label">Category Rate*:</label>
+<div class="controls">
+<input id="title" name="criteria_rate" size="30" type="text" class="criteria_rate span2" value=""  readonly="readonly" />
+</div>
+</div>
+
+</div><!-- /page -->
+</body>
+</html>

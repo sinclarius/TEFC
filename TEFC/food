@@ -1,0 +1,27 @@
+$(function() {
+    $("#slider-range-min").slider({
+        range: "min",
+        value: 1,
+        min: 1,
+        max: 150,
+        slide: function(event, ui) {
+            $("#amount").val("" + ui.value);
+            
+            var estimatedMonthlyBill = Math.round(100 * (parseFloat(ui.value)  * .05 * 30)) / 100;
+            
+            $("#EstimatedMonthlyBill").text(estimatedMonthlyBill);
+        }
+    });
+    $("#amount").val("" + $("#slider-range-min").slider("value"));
+});
+
+<p>
+    <label for="amount">Minutes Per Day:</label>
+    <input type="text" id="amount" />
+</p>
+<div id="slider-range-min"></div>
+<br />
+<p> 
+    Estimated Monthly Bill: 
+    <span id="EstimatedMonthlyBill"></span>
+</p>

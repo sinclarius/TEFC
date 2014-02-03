@@ -1,0 +1,28 @@
+<div class="accordion" id="section1">Heading<span></span></div>
+    <div class="container">
+        <div class="content">
+            <div>Sample Content</div>
+            <p>Content here....</p>
+        </div>
+    </div>
+    <div class="accordion" id="section2">Heading<span></span></div>
+    <div class="container">
+        <div class="content">
+            <div>Sample Content</div>
+            <p>Content here....</p>
+        </div>
+    </div>
+    <div class="accordion" id="section3">Heading<span></span></div>
+    <div class="container">
+        <div class="content">
+            <div>Sample Content</div>
+            <p>Content here....</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="javascript/jquery.cookie.js"></script> <!--required only if using cookies-->
+    <script type="text/javascript" src="javascript/jquery.accordion.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.accordion').accordion({defaultOpen: 'some_id'}); //some_id section1 in demo
+        });
+    </script>
