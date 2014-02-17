@@ -41,8 +41,6 @@
 
         var food = ((foodhect / 365) * daysinput);
 
-        document.FOOD.FOUTPUT1.value = food;
-
     <!-- GOODS -->
         var GOODINPUT1 = document.GOOD.GINPUT1.value;
         var GOODINPUT2 = document.GOOD.GINPUT2.value;
@@ -52,8 +50,6 @@
         var Gtobalc = ((GOODINPUT3*0.00016)/1.14);
         var good = ((Gclothi+Gbookma+Gtobalc)*carbseq)/10000;
 
-        document.GOOD.GOUTPUT1.value = good;
-
     <!-- ACTIVITY -->
         var ACTIINPUT1 = document.ACTIVITY.AINPUT1.value;
         var ACTIINPUT2 = document.ACTIVITY.AINPUT2.value;
@@ -62,8 +58,6 @@
         var Aentert = (ACTIINPUT2*9.4);
         var Aactivi = (ACTIINPUT3*95.6);
         var acti = ((Aattrac+Aentert+Aactivi)*carbseq)/10000;
-
-        document.ACTIVITY.AOUTPUT1.value = acti;
 
     <!-- Accomodation --> 
         var ACCOINPUT1 = document.ACCOMODATION.ACINPUT1.value;
@@ -83,8 +77,6 @@
         var ACprivat = (ACCOINPUT7*30);
         var ACboatss = (ACCOINPUT8*40);
         var acco = ((ACsimgue+ACluxgue+AConetwo+ACthrfou+ACfivest+ACselfca+ACprivat+ACboatss)*carbseq)/10000;
-
-        document.ACCOMODATION.ACOUTPUT1.value = acco;
 
     <!-- Transport --> 
         <!-- Airplane -->
@@ -147,8 +139,6 @@
 
         <!-- Total -->
         var tran = ((trainlocal + traininter + buslocal + businter + boat + car1 + car2 + plane1 + plane2) * carbseq)/10000;
-
-        document.results.OUTPUT1.value = tran;
 
     <!-- Summary -->
 
@@ -368,9 +358,6 @@
 
                     <input type="radio" name="radio-choice" id="radiofood5" value="choice-4" onclick="calculate();" /><label for="radiofood5">5</label>
                 </fieldset>
-
-                <label for="basic">Total Hectares:</label>
-                <input type="number" name="FOUTPUT1" id="output" readonly >
             </form>
 
             <br />
@@ -408,9 +395,6 @@
                     <label for="basic">Tobacco and Alcohol:</label>
                     <input type="number" name="GINPUT3" id="input3" value="0" onchange="calculate();"/>
                             <br />
-                    <label for="basic">Total Hectares:</label>
-                    <input type="number" name="GOUTPUT1" id="output" readonly >
-                            <br />
                         <center>
                         <div data-type="horizontal" data-role="controlgroup">
                         <a href="#food" data-role="button" data-theme="b" data-inline="true">Back</a>
@@ -445,9 +429,6 @@
                                 <br />
                         <label for="basic">Activities:</label>
                         <input type="number" name="AINPUT3" id="input3" value="0" onchange="calculate();"/>
-                                <br />
-                        <label for="basic">Total Hectares:</label>
-                        <input type="number" name="AOUTPUT1" id="output" readonly >
                                 <br />
                                 <center>
                                     <div data-type="horizontal" data-role="controlgroup">
@@ -516,8 +497,6 @@
                         </tbody>
                     </table>
                     </center>
-                    <label for="basic">Total Hectares:</label>
-                    <input type="number" name="ACOUTPUT1" id="output" readonly >
                     </form>
 
             
@@ -649,11 +628,6 @@
                     <input type="number" name="boatin1" id="boatin1" value="0" onchange="calculate();" /><br />
                     </form>
                 </div>
-
-                <form name="results">
-                <label for="basic">Total Hectares:</label>
-                <input type="number" name="OUTPUT1" id="output" readonly >
-                </form>
 
             <center>
             <div data-type="horizontal" data-role="controlgroup">
