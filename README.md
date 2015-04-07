@@ -1,10 +1,10 @@
 TEFC
 ====
 
-Travel Ecological Footprint Calculator
+Travel Ecological Footprint Calculator for Franklin University Switzerland
 
 This footprint calculator is specifically designed to help you assess your environmental
-impact both during independent and Academic Travels. This Travel Ecological Footprint Calculator 
+impact both during independent and Franklin Academic Travels. This Travel Ecological Footprint Calculator  (TEFC)
 is a tool to compare travel impacts with at-home impacts. Our ecological footprint calculator 
 is comprised of the following sub-categories: transport, accommodation, activities, goods and fiber,
 and food. It takes just a few minutes to calculate the total hectares (10,000 m2) of land required to 
